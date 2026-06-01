@@ -15,22 +15,19 @@ redirect_from:
 
 Selamat datang di website personal saya.
 
-Saya adalah peneliti pemula yang tertarik pada bidang **sastra, budaya, arsip digital, dan digital humanities**. Website ini saya gunakan sebagai ruang untuk menyimpan profil akademik, CV, tulisan, catatan riset, serta dokumentasi proyek-proyek digital yang sedang atau pernah saya kerjakan.
-
-Website ini juga menjadi tempat untuk menghubungkan berbagai karya, arsip, dan eksperimen digital yang berkaitan dengan humaniora, teknologi, dan pengetahuan budaya.
+Saya adalah pembelajar yang tertarik pada bidang **sastra, budaya, arsip digital, dan digital humanities**. Website ini saya gunakan sebagai ruang untuk menyimpan profil akademik, CV, tulisan, catatan riset, serta dokumentasi proyek-proyek digital yang sedang atau pernah saya kerjakan.
 
 ## Fokus Minat
 
-- Sastra dan kebudayaan
+- Sastra, bahasa, dan kebudayaan Indonesia
+- Jurnalisme
 - Digital humanities
-- Arsip digital
 - Kajian teks dan media
-- Dokumentasi pengetahuan lokal
 - Penulisan akademik dan kreatif
 
 ## Proyek Digital Humanities
 
-Saya tertarik mengembangkan proyek digital yang menghubungkan riset humaniora dengan teknologi. Beberapa bentuk proyek yang ingin saya kembangkan antara lain arsip digital, katalog teks, peta budaya, visualisasi data humaniora, dan dokumentasi pengetahuan lokal.
+Saya tertarik mengembangkan proyek digital yang menghubungkan riset humaniora dengan teknologi.
 
 Lihat halaman [Proyek](/portfolio/) untuk dokumentasi lebih lengkap.
 
