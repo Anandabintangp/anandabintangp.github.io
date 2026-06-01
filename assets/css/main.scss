@@ -1,43 +1,21 @@
----
----
+/* Custom fix: prevent footer from covering page content */
+.page__footer {
+  position: static !important;
+  clear: both !important;
+  width: 100% !important;
+  margin-top: 3rem !important;
+  z-index: 1 !important;
+}
 
-/*
- * This file controls what is imported from /_sass
- *
- * Note that the files are processed in the order they are imported, so they are partly
-   sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
- */
+/* Optional: make footer cleaner */
+.page__footer footer {
+  margin-top: 1rem !important;
+  padding-top: 1rem !important;
+}
 
-@import
-    "vendor/breakpoint/breakpoint",
-
-    "themes",
-    "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
-    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
-
-    "include/mixins",
-    "vendor/susy/susy",
-
-    "layout/reset",
-    "layout/base",
-
-    "include/utilities",
-    "layout/tables",
-    "layout/buttons",
-    "layout/notices",
-    "layout/masthead",
-    "layout/navigation",
-    "layout/footer",
-    "syntax",
-
-    "layout/forms",
-
-    "layout/page",
-    "layout/archive",
-    "layout/sidebar",
-    "layout/json_cv",
-
-    "vendor/font-awesome/fontawesome",
-    "vendor/font-awesome/solid",
-    "vendor/font-awesome/brands"
-;
+/* Give page content enough bottom space */
+.page,
+.archive,
+.initial-content {
+  padding-bottom: 3rem !important;
+}
