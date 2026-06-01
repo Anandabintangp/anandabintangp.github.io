@@ -14,27 +14,14 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Ananda Bintang Purwaramdhona"
-  pronouns         :
-  bio              : "Peneliti pemula di bidang sastra, budaya, dan digital humanities."
-  location         : "Indonesia"
-  employer         :
-  uri              :
+  pronouns         : 
   email            : "contact.anandabintang@gmail.com"
 
   # Academic websites
-  academia         :
   googlescholar    : "https://scholar.google.com/citations?user=wM7RrrwAAAAJ&hl=en&authuser=6"
-  orcid            : "https://orcid.org/0009-0002-4421-250X"
-  researchgate     :
-  scopus           :
-  zotero           :
 
-  # Repositories and software development
-  github           : "anandabintangp"
-
-  # Social media
-  instagram        :
-  linkedin         :
+  instagram        : "https://instagram.com/anandabintang"
+  linkedin         : "https://www.linkedin.com/in/ananda-bintang/"
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
