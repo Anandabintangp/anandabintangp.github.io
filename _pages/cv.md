@@ -1,64 +1,63 @@
 ---
-layout: archive
 title: "CV"
 permalink: /cv/
 author_profile: true
-redirect_from:
-  - /resume
 ---
 
-{% include base_path %}
+<p style="font-size: 0.95em; margin-bottom: 1.5em;">
+  <strong>Bahasa:</strong> Indonesia | <a href="/cv-en/">English</a>
+</p>
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+# Curriculum Vitae
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+## Profil Singkat
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+Saya adalah peneliti pemula yang memiliki minat pada bidang sastra, budaya, digital humanities, arsip digital, dan pengembangan proyek humaniora berbasis teknologi.
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+## Pendidikan
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+**Nama Universitas / Program Studi**  
+Tahun masuk – sekarang
+
+Tuliskan deskripsi singkat tentang pendidikan, fokus studi, atau bidang akademik yang sedang ditekuni.
+
+## Minat Akademik
+
+- Sastra dan kebudayaan
+- Digital humanities
+- Arsip digital
+- Kajian teks dan media
+- Dokumentasi pengetahuan lokal
+- Penulisan akademik
+
+## Pengalaman
+
+### Nama Kegiatan / Organisasi / Proyek
+Tuliskan pengalaman akademik, organisasi, riset, kepanitiaan, atau proyek yang pernah kamu ikuti.
+
+### Nama Kegiatan / Organisasi / Proyek
+Tambahkan pengalaman lain jika ada.
+
+## Proyek
+
+### Proyek Digital Humanities
+Deskripsikan proyek digital humanities yang sedang atau pernah kamu kerjakan. Misalnya arsip digital, katalog teks, peta budaya, dokumentasi sastra, atau visualisasi data humaniora.
+
+## Keahlian
+
+- Penulisan akademik
+- Riset humaniora
+- Pengelolaan arsip digital
+- Dokumentasi proyek
+- Markdown dan GitHub Pages
+- Dasar-dasar pengembangan website statis
+
+## Publikasi dan Tulisan
+
+Daftar publikasi, artikel, esai, atau tulisan dapat ditambahkan pada bagian ini.
+
+## Unduh CV
+
+Versi PDF CV dapat ditambahkan melalui tautan berikut:
+
+[Download CV](/files/CV_Ananda_Bintang.pdf)
