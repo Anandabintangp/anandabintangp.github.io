@@ -468,30 +468,6 @@
       resize: vertical;
     }
 
-    .bank-box {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(244, 234, 216, 0.65);
-      border: 1px solid rgba(185, 147, 90, 0.22);
-      margin: 14px 0;
-    }
-
-    .bank-box strong {
-      display: block;
-      color: var(--dark-green);
-      margin-bottom: 5px;
-    }
-
-    .copy-btn {
-      margin-top: 8px;
-      border: none;
-      background: transparent;
-      color: var(--gold);
-      font-weight: 700;
-      cursor: pointer;
-      padding: 0;
-    }
-
     /* Wishes */
     .wish-list {
       margin-top: 28px;
@@ -629,7 +605,7 @@
 
   <!-- AUDIO -->
  <audio id="bgMusic" loop>
-  <source src="asset/Karolina.mp3" type="audio/mpeg">
+  <source src="wedding/assets/Karolina.mp3" type="audio/mpeg">
 </audio>
 
   <!-- FLOATING BUTTONS -->
@@ -648,7 +624,7 @@
       <h1>Elektra<br>&<br>Bintang</h1>
       <p class="hero-date">Minggu, 00 Bulan 2027</p>
       <p class="narrow">
-        "Dan dalam dadaku memerdu lagu. Menarik menari seluruh aku" - Chairil Anwar
+        “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu merasa tenteram kepadanya.”
       </p>
       <p class="scroll-note">Scroll untuk melihat undangan</p>
     </div>
@@ -812,11 +788,11 @@
     </div>
   </section>
 
-  <!-- RSVP + GIFT -->
+  <!-- RSVP -->
   <section class="section">
     <div class="container">
       <div class="center">
-        <div class="eyebrow">RSVP & Gift</div>
+        <div class="eyebrow">RSVP</div>
         <h2>Konfirmasi Kehadiran</h2>
       </div>
 
@@ -831,47 +807,20 @@
             <option value="Tidak hadir">Tidak hadir</option>
             <option value="Masih belum pasti">Masih belum pasti</option>
           </select>
-          <textarea id="rsvpMessage" placeholder="Ucapan singkat"></textarea>
 
           <button class="btn" onclick="sendRSVP()">Kirim RSVP</button>
         </div>
 
         <div class="form-card card">
-          <h3>Love Gift</h3>
-          <p>Doa restu Anda adalah hadiah terbaik bagi kami. Namun, apabila ingin memberikan tanda kasih, dapat melalui informasi berikut.</p>
+          <h3>Ucapan Singkat</h3>
+          <p>Tulis ucapan dan doa untuk kami. Catatan ini tersimpan di perangkat Anda.</p>
 
-          <div class="bank-box">
-            <strong>Bank BCA</strong>
-            <span id="rekening1">0000000000</span><br>
-            <span>a.n. Nama Pemilik Rekening</span><br>
-            <button class="copy-btn" onclick="copyText('rekening1')">Salin Nomor</button>
-          </div>
+          <input type="text" id="wishName" placeholder="Nama Anda">
+          <textarea id="wishText" placeholder="Tulis ucapan dan doa"></textarea>
+          <button class="btn" onclick="addWish()">Kirim Ucapan</button>
 
-          <div class="bank-box">
-            <strong>Alamat Pengiriman</strong>
-            <span id="alamatGift">Alamat lengkap penerima hadiah.</span><br>
-            <button class="copy-btn" onclick="copyText('alamatGift')">Salin Alamat</button>
-          </div>
+          <div class="wish-list" id="wishList"></div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WISHES -->
-  <section class="section">
-    <div class="container">
-      <div class="center">
-        <div class="eyebrow">Wishes</div>
-        <h2>Ucapan & Doa</h2>
-        <p class="narrow">Tulis ucapan dan doa untuk kami. Catatan ini tersimpan di perangkat Anda.</p>
-      </div>
-
-      <div class="narrow card form-card" style="margin-top: 34px;">
-        <input type="text" id="wishName" placeholder="Nama Anda">
-        <textarea id="wishText" placeholder="Tulis ucapan dan doa"></textarea>
-        <button class="btn" onclick="addWish()">Kirim Ucapan</button>
-
-        <div class="wish-list" id="wishList"></div>
       </div>
     </div>
   </section>
@@ -975,24 +924,15 @@
     function sendRSVP() {
       const name = document.getElementById("rsvpName").value || "Tamu";
       const status = document.getElementById("rsvpStatus").value;
-      const message = document.getElementById("rsvpMessage").value || "-";
 
       const text =
         `Halo Elektra & Bintang,%0A%0A` +
         `Saya ingin konfirmasi kehadiran:%0A` +
         `Nama: ${encodeURIComponent(name)}%0A` +
-        `Status: ${encodeURIComponent(status)}%0A` +
-        `Ucapan: ${encodeURIComponent(message)}%0A%0A` +
+        `Status: ${encodeURIComponent(status)}%0A%0A` +
         `Terima kasih.`;
 
       window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
-    }
-
-    function copyText(id) {
-      const text = document.getElementById(id).innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Berhasil disalin.");
-      });
     }
 
     function addWish() {
