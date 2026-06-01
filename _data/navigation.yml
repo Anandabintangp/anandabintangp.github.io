@@ -7,7 +7,7 @@ main:
     url: /cv/
 
   - title: "Tulisan"
-    url: /year-archive/
+    url: /tulisan/
 
   - title: "Proyek"
     url: /portfolio/
@@ -15,8 +15,8 @@ main:
   - title: "Kontak"
     url: /contact/
 
-  - title: "🇮🇩 ID"
+  - title: "ID"
     url: /
 
-  - title: "🇬🇧 EN"
+  - title: "EN"
     url: /en/
