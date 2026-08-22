@@ -1,0 +1,10 @@
+
+body{font-family:Arial;background:#f5f7fb;margin:0;color:#222}
+nav{background:white;padding:20px 8%;display:flex;justify-content:space-between}
+nav a{text-decoration:none}
+header{background:#111827;color:white;padding:90px 10%}
+main{max-width:900px;margin:auto;padding:30px}
+section{background:white;padding:30px;margin-bottom:20px;border-radius:15px}
+input,textarea{width:100%;padding:10px;margin:8px 0}
+button{padding:10px 20px}
+article{padding:15px 0;border-bottom:1px solid #ddd}
