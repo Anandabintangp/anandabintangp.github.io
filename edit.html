@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Panel Admin &mdash; ABP Academic</title>
 <meta name="robots" content="noindex">
+<link rel="icon" href="assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/img/abp-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Anton&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -15,161 +20,187 @@
     <div class="tb-icon"></div>
     <div class="tb-text">ABP Academic &mdash; [Panel Admin]</div>
     <div class="tb-buttons">
-      <button class="tb-btn" type="button" aria-hidden="true" tabindex="-1">_</button>
-      <button class="tb-btn" type="button" aria-hidden="true" tabindex="-1">&#9633;</button>
-      <button class="tb-btn" type="button" aria-hidden="true" tabindex="-1">&times;</button>
+      <button class="tb-btn" type="button" data-act="mini">_</button>
+      <button class="tb-btn" type="button" data-act="maxi">&#9633;</button>
+      <button class="tb-btn" type="button" data-act="close">&times;</button>
     </div>
   </div>
 
-  <div class="menubar">
-    <span><u>B</u>erkas</span><span><u>U</u>bah</span><span><u>T</u>ampilan</span>
-    <span><u>K</u>unjungi</span><span><u>P</u>enanda</span><span><u>O</u>psi</span>
-    <span><u>J</u>endela</span><span>Ban<u>t</u>uan</span>
-  </div>
+  <nav class="menubar" id="menubar">
+    <div class="menu">
+      <button type="button"><u>B</u>erkas</button>
+      <ul>
+        <li><button type="button" data-act="gen">Buat semua JSON</button></li>
+        <li><button type="button" data-act="dl-all">Unduh ketiga berkas</button></li>
+        <li class="sep"></li>
+        <li><button type="button" data-act="print">Cetak</button></li>
+        <li><a href="index.html">Kembali ke situs</a></li>
+      </ul>
+    </div>
+    <div class="menu">
+      <button type="button"><u>T</u>ampilan</button>
+      <ul>
+        <li><button type="button" data-act="maxi">Perbesar teks</button></li>
+        <li><button type="button" data-act="mini">Perkecil teks</button></li>
+        <li><button type="button" data-act="zoom-reset">Ukuran normal</button></li>
+      </ul>
+    </div>
+    <div class="menu">
+      <button type="button"><u>K</u>unjungi</button>
+      <ul id="menu-goto"></ul>
+    </div>
+    <div class="menu">
+      <button type="button">Ban<u>t</u>uan</button>
+      <ul><li><button type="button" data-act="about">Cara menyimpan</button></li></ul>
+    </div>
+  </nav>
 
   <div class="toolbar">
-    <a class="tool" href="index.html"><i class="i-back"></i><span>Kembali</span></a>
-    <a class="tool" href="#hasil"><i class="i-fwd"></i><span>Maju</span></a>
-    <a class="tool" href="index.html"><i class="i-home"></i><span>Beranda</span></a>
-    <a class="tool" href="edit.html"><i class="i-reload"></i><span>Muat Ulang</span></a>
-    <a class="tool" href="#profil-box"><i class="i-find"></i><span>Cari</span></a>
-    <a class="tool" href="#top" onclick="window.print();return false;"><i class="i-print"></i><span>Cetak</span></a>
-    <a class="tool" href="#hasil"><i class="i-mail"></i><span>Hasil</span></a>
-    <a class="tool" href="edit.html"><i class="i-edit"></i><span>Admin</span></a>
-    <a class="tool" href="index.html"><i class="i-stop"></i><span>Henti</span></a>
+    <button class="tool" type="button" data-act="back"><i class="i-back"></i><span>Kembali</span></button>
+    <button class="tool" type="button" data-act="forward"><i class="i-fwd"></i><span>Maju</span></button>
+    <button class="tool" type="button" data-act="home"><i class="i-home"></i><span>Situs</span></button>
+    <button class="tool" type="button" data-act="reload"><i class="i-reload"></i><span>Muat Ulang</span></button>
+    <button class="tool" type="button" data-act="gen"><i class="i-cv"></i><span>Buat JSON</span></button>
+    <button class="tool" type="button" data-act="print"><i class="i-print"></i><span>Cetak</span></button>
+    <button class="tool" type="button" data-act="about"><i class="i-find"></i><span>Bantuan</span></button>
   </div>
 
   <div class="locbar">
     <label>Alamat:</label>
     <div class="url">http://anandabintangp.github.io/edit.html</div>
-    <div class="spinner"></div>
+    <div class="brandmark"></div>
   </div>
 
-  <div class="dirbar">
-    <a href="index.html">Lihat Situs</a>
-    <a href="#profil-box">Profil</a>
-    <a href="#pubs-box">Publikasi</a>
-    <a href="#hasil">Hasil JSON</a>
-    <a href="#bantuan">Cara Simpan</a>
-  </div>
+  <main class="viewport">
 
-  <div class="viewport" id="top">
-
-    <div class="center">
-      <h1>Panel Admin</h1>
-      <p class="small gray">Pengelola isi situs</p>
-    </div>
-
-    <hr class="rainbow">
-
-    <div class="frameset">
-
-      <div class="sidebar">
-        <div class="panel">
-          <div class="panel-title">MENU ADMIN</div>
-          <div class="panel-body">
-            <ul class="ball green">
-              <li><a href="#profil-box">Profil</a></li>
-              <li><a href="#pubs-box">Publikasi</a></li>
-              <li><a href="#hasil">Hasil JSON</a></li>
-              <li><a href="#bantuan">Cara Simpan</a></li>
-              <li><a href="index.html">Lihat Situs</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="panel">
-          <div class="panel-title">BERKAS DATA</div>
-          <div class="panel-body small">
-            <p style="margin:0 0 4px">data/profile.json</p>
-            <p style="margin:0">data/publications.json</p>
+    <!-- ===== GERBANG KATA SANDI ===== -->
+    <div id="gate">
+      <div class="panel">
+        <div class="panel-title">MASUK PANEL ADMIN</div>
+        <div class="panel-body">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div class="dico dico-key" style="flex:0 0 34px;height:34px"></div>
+            <div style="flex:1;min-width:0">
+              <p style="margin-top:0">Halaman ini hanya untuk pemilik situs. Masukkan kata sandi.</p>
+              <label class="fld" for="gate-pw">Kata sandi</label>
+              <input type="password" id="gate-pw" autocomplete="current-password">
+              <p class="err" id="gate-err"></p>
+              <div class="btnrow">
+                <button type="button" data-act="gate-ok">Masuk</button>
+                <a class="btn" href="index.html">Batal</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="content">
+    <!-- ===== APLIKASI ===== -->
+    <div id="adminapp">
 
-        <a id="profil-box"></a>
-        <fieldset>
-          <legend>Profil</legend>
+      <div class="center" style="margin-bottom:6px">
+        <h1 class="wordart" data-text="Panel Admin">Panel Admin</h1>
+      </div>
 
-          <label class="fld" for="name">Nama</label>
-          <input type="text" id="name">
+      <div class="notebox">
+        <div class="ico"></div>
+        <div>
+          Sunting isi di bawah, tekan <b>Buat semua JSON</b>, lalu salin atau unduh hasilnya dan timpa berkas
+          di folder <code>data/</code> pada repositori, kemudian commit. GitHub Pages bersifat statis sehingga
+          panel ini tidak bisa menyimpan langsung ke server.
+        </div>
+      </div>
 
-          <label class="fld" for="title">Titel</label>
-          <input type="text" id="title">
+      <a id="profil"></a>
+      <fieldset>
+        <legend>Profil &mdash; data/profile.json</legend>
+        <label class="fld" for="f-name">Nama</label>
+        <input type="text" id="f-name">
+        <label class="fld" for="f-title">Titel</label>
+        <input type="text" id="f-title">
+        <label class="fld" for="f-bio">Bio</label>
+        <textarea id="f-bio" rows="3"></textarea>
+        <label class="fld" for="f-gender">Jenis kelamin</label>
+        <input type="text" id="f-gender">
+        <label class="fld" for="f-birth">Tempat, tanggal lahir</label>
+        <input type="text" id="f-birth">
+        <label class="fld" for="f-email">Surel</label>
+        <input type="text" id="f-email">
+        <label class="fld" for="f-phone">Telepon</label>
+        <input type="text" id="f-phone">
+        <label class="fld" for="f-interests">Minat riset (pisahkan dengan koma)</label>
+        <input type="text" id="f-interests">
+        <label class="fld" for="f-scholar">Google Scholar</label>
+        <input type="text" id="f-scholar">
+        <label class="fld" for="f-linktree">Linktree</label>
+        <input type="text" id="f-linktree">
+      </fieldset>
 
-          <label class="fld" for="bio">Bio</label>
-          <textarea id="bio" rows="4"></textarea>
+      <div id="sections"></div>
 
-          <label class="fld" for="email">Surel</label>
-          <input type="text" id="email">
-        </fieldset>
-
-        <a id="pubs-box"></a>
-        <fieldset>
-          <legend>Publikasi</legend>
-
-          <div class="pubrow" style="font-family:'MS Sans Serif',Tahoma,sans-serif;font-size:11px;font-weight:bold">
-            <div>TAHUN</div><div>JUDUL</div><div>JURNAL</div><div>&nbsp;</div>
-          </div>
-
-          <div id="pubrows"></div>
-
-          <div class="btnrow">
-            <button type="button" class="small" id="btn-add">+ Tambah Baris</button>
-          </div>
-        </fieldset>
-
-        <a id="hasil"></a>
-        <fieldset>
-          <legend>Hasil JSON</legend>
-
-          <div class="btnrow" style="margin-top:0">
-            <button type="button" id="btn-gen">Buat</button>
-            <button type="button" id="btn-copy-profile">Salin profil</button>
-            <button type="button" id="btn-copy-pubs">Salin publikasi</button>
-            <button type="button" id="btn-dl-profile">Unduh profile.json</button>
-            <button type="button" id="btn-dl-pubs">Unduh publications.json</button>
-          </div>
-
-          <label class="fld" for="out-profile">data/profile.json</label>
-          <textarea class="mono-out" id="out-profile" spellcheck="false" readonly></textarea>
-
-          <label class="fld" for="out-pubs">data/publications.json</label>
-          <textarea class="mono-out" id="out-pubs" spellcheck="false" readonly></textarea>
-        </fieldset>
-
-        <a id="bantuan"></a>
-        <div class="notebox">
-          <div class="ico"></div>
-          <div>
-            GitHub Pages bersifat statis, jadi perubahan di panel ini tidak otomatis tersimpan.
-            Salin atau unduh hasil JSON di atas, timpa berkas <code>data/profile.json</code> dan
-            <code>data/publications.json</code> di repositori, lalu commit. Untuk penyimpanan
-            langsung dari browser diperlukan integrasi GitHub API dengan personal access token
-            atau GitHub Actions workflow.
-          </div>
+      <a id="hasil"></a>
+      <fieldset>
+        <legend>Hasil JSON</legend>
+        <div class="btnrow" style="margin-top:0">
+          <button type="button" data-act="gen">Buat semua JSON</button>
+          <button type="button" data-act="dl-all">Unduh ketiga berkas</button>
         </div>
 
-        <hr class="rainbow">
+        <label class="fld">data/profile.json
+          <button type="button" class="small" data-copy="out-profile">Salin</button>
+          <button type="button" class="small" data-dl="out-profile|profile.json">Unduh</button>
+        </label>
+        <textarea class="mono-out" id="out-profile" spellcheck="false" readonly></textarea>
 
-        <div class="footer-strip">
-          <p class="small"><a href="index.html">[ Lihat Situs ]</a> <a href="#top">[ Atas ]</a></p>
-          <p class="small gray">&copy; 2000&ndash;<span id="year">2026</span> Ananda Bintang Purwaramdhona</p>
-        </div>
+        <label class="fld">data/publications.json
+          <button type="button" class="small" data-copy="out-pubs">Salin</button>
+          <button type="button" class="small" data-dl="out-pubs|publications.json">Unduh</button>
+        </label>
+        <textarea class="mono-out" id="out-pubs" spellcheck="false" readonly></textarea>
 
+        <label class="fld">data/cv.json
+          <button type="button" class="small" data-copy="out-cv">Salin</button>
+          <button type="button" class="small" data-dl="out-cv|cv.json">Unduh</button>
+        </label>
+        <textarea class="mono-out" id="out-cv" spellcheck="false" readonly></textarea>
+      </fieldset>
+
+      <div class="center">
+        <p class="small gray">&copy; 2000&ndash;<span id="year">2026</span> Ananda Bintang Purwaramdhona</p>
       </div>
     </div>
-  </div>
+
+  </main>
 
   <div class="statusbar">
     <div class="lock"></div>
-    <div class="msg" id="status">Selesai</div>
-    <div class="prog"><i></i></div>
+    <div class="msg" id="status">Menunggu kata sandi…</div>
+    <div class="zone">Zona Lokal</div>
     <div class="grip"></div>
   </div>
 
+</div>
+
+<div class="taskbar">
+  <button id="startbtn" type="button"><img src="assets/img/abp-icon.png" alt="">Mulai</button>
+  <div class="tasks"><button class="taskitem" type="button" data-act="home">Panel Admin</button></div>
+  <div class="tray"><span class="clock" id="clock">--:--</span></div>
+</div>
+<div id="startmenu"><ul id="startlist"></ul></div>
+
+<div class="overlay" id="infodlg">
+  <div class="dialog wide" role="dialog" aria-modal="true">
+    <div class="titlebar">
+      <div class="tb-icon"></div>
+      <div class="tb-text" id="info-title">Bantuan</div>
+      <div class="tb-buttons"><button class="tb-btn" type="button" data-act="info-close">&times;</button></div>
+    </div>
+    <div class="dialog-body">
+      <div class="dico dico-info"></div>
+      <div class="grow" id="info-body"></div>
+    </div>
+    <div class="dialog-foot"><button type="button" data-act="info-close">OK</button></div>
+  </div>
 </div>
 
 <script src="assets/js/editor.js"></script>

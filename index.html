@@ -4,154 +4,299 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ananda Bintang Purwaramdhona</title>
+<meta name="description" content="Dosen, peneliti, dan penulis. Humaniora Digital, Puisi Kontemporer, Kajian Budaya.">
+<link rel="icon" href="assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/img/abp-icon.png">
+<link rel="apple-touch-icon" href="assets/img/abp-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Anton&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 <div class="browser">
 
+  <!-- ===== BARIS JUDUL ===== -->
   <div class="titlebar">
     <div class="tb-icon"></div>
     <div class="tb-text">ABP Academic &mdash; [Ananda Bintang Purwaramdhona]</div>
     <div class="tb-buttons">
-      <button class="tb-btn" type="button" aria-hidden="true" tabindex="-1">_</button>
-      <button class="tb-btn" type="button" aria-hidden="true" tabindex="-1">&#9633;</button>
-      <button class="tb-btn" type="button" aria-hidden="true" tabindex="-1">&times;</button>
+      <button class="tb-btn" type="button" data-act="mini" title="Perkecil teks">_</button>
+      <button class="tb-btn" type="button" data-act="maxi" title="Perbesar teks">&#9633;</button>
+      <button class="tb-btn" type="button" data-act="about" title="Tentang">?</button>
     </div>
   </div>
 
-  <div class="menubar">
-    <span><u>B</u>erkas</span><span><u>U</u>bah</span><span><u>T</u>ampilan</span>
-    <span><u>K</u>unjungi</span><span><u>P</u>enanda</span><span><u>O</u>psi</span>
-    <span><u>J</u>endela</span><span>Ban<u>t</u>uan</span>
-  </div>
+  <!-- ===== BARIS MENU ===== -->
+  <nav class="menubar" id="menubar">
+    <div class="menu">
+      <button type="button"><u>B</u>erkas</button>
+      <ul>
+        <li><a href="assets/CV-Ananda-Bintang-Purwaramdhona.pdf" target="_blank" rel="noopener">Buka CV (PDF)</a></li>
+        <li><a href="assets/CV-Ananda-Bintang-Purwaramdhona.pdf" download>Unduh CV&hellip;</a></li>
+        <li class="sep"></li>
+        <li><button type="button" data-act="print">Cetak halaman&hellip;</button></li>
+        <li class="sep"></li>
+        <li><button type="button" data-act="admin">Panel Admin&hellip;</button></li>
+      </ul>
+    </div>
+    <div class="menu">
+      <button type="button"><u>U</u>bah</button>
+      <ul>
+        <li><button type="button" data-act="find">Cari di halaman&hellip;</button></li>
+        <li><button type="button" data-act="copy-email">Salin alamat surel</button></li>
+        <li><button type="button" data-act="copy-url">Salin alamat situs</button></li>
+      </ul>
+    </div>
+    <div class="menu">
+      <button type="button"><u>T</u>ampilan</button>
+      <ul>
+        <li><button type="button" data-act="maxi">Perbesar teks</button></li>
+        <li><button type="button" data-act="mini">Perkecil teks</button></li>
+        <li><button type="button" data-act="zoom-reset">Ukuran normal</button></li>
+        <li class="sep"></li>
+        <li><button type="button" data-act="expand">Buka semua bagian</button></li>
+        <li><button type="button" data-act="reload">Muat ulang</button></li>
+      </ul>
+    </div>
+    <div class="menu">
+      <button type="button"><u>K</u>unjungi</button>
+      <ul id="menu-goto"></ul>
+    </div>
+    <div class="menu">
+      <button type="button"><u>P</u>enanda</button>
+      <ul id="menu-links"></ul>
+    </div>
+    <div class="menu">
+      <button type="button"><u>O</u>psi</button>
+      <ul>
+        <li><button type="button" data-act="clippy-toggle">Tampilkan/sembunyikan asisten</button></li>
+        <li><button type="button" data-act="anim-toggle">Hidup/matikan animasi</button></li>
+      </ul>
+    </div>
+    <div class="menu">
+      <button type="button">Ban<u>t</u>uan</button>
+      <ul>
+        <li><button type="button" data-act="about">Tentang situs ini</button></li>
+        <li><button type="button" data-act="clippy-tip">Tanya asisten</button></li>
+      </ul>
+    </div>
+  </nav>
 
+  <!-- ===== BARIS ALAT ===== -->
   <div class="toolbar">
-    <a class="tool" href="#top"><i class="i-back"></i><span>Kembali</span></a>
-    <a class="tool" href="#kontak"><i class="i-fwd"></i><span>Maju</span></a>
-    <a class="tool" href="index.html"><i class="i-home"></i><span>Beranda</span></a>
-    <a class="tool" href="index.html"><i class="i-reload"></i><span>Muat Ulang</span></a>
-    <a class="tool" href="#publikasi"><i class="i-find"></i><span>Cari</span></a>
-    <a class="tool" href="#top" onclick="window.print();return false;"><i class="i-print"></i><span>Cetak</span></a>
-    <a class="tool" href="#kontak"><i class="i-mail"></i><span>Surel</span></a>
-    <a class="tool" href="edit.html"><i class="i-edit"></i><span>Admin</span></a>
-    <a class="tool" href="#top"><i class="i-stop"></i><span>Henti</span></a>
+    <button class="tool" type="button" data-act="back"><i class="i-back"></i><span>Kembali</span></button>
+    <button class="tool" type="button" data-act="forward"><i class="i-fwd"></i><span>Maju</span></button>
+    <button class="tool" type="button" data-act="home"><i class="i-home"></i><span>Beranda</span></button>
+    <button class="tool" type="button" data-act="reload"><i class="i-reload"></i><span>Muat Ulang</span></button>
+    <button class="tool" type="button" data-act="find"><i class="i-find"></i><span>Cari</span></button>
+    <button class="tool" type="button" data-act="print"><i class="i-print"></i><span>Cetak</span></button>
+    <button class="tool" type="button" data-act="cv"><i class="i-cv"></i><span>CV</span></button>
+    <button class="tool" type="button" data-act="mail"><i class="i-mail"></i><span>Surel</span></button>
+    <button class="tool" type="button" data-act="admin"><i class="i-lock"></i><span>Admin</span></button>
+    <button class="tool" type="button" data-act="stop"><i class="i-stop"></i><span>Henti</span></button>
   </div>
 
+  <!-- ===== BARIS ALAMAT ===== -->
   <div class="locbar">
-    <label>Alamat:</label>
-    <div class="url">http://anandabintangp.github.io/index.html</div>
-    <div class="spinner"></div>
+    <label for="urlbar">Alamat:</label>
+    <div class="url" id="urlbar">http://anandabintangp.github.io/index.html</div>
+    <div class="brandmark" id="brandmark" title="ABP"></div>
   </div>
 
-  <div class="dirbar">
-    <a href="#profil">Profil</a>
-    <a href="#kajian">Bidang Kajian</a>
-    <a href="#publikasi">Publikasi</a>
-    <a href="#kontak">Kontak</a>
-    <a href="edit.html">Admin</a>
-  </div>
+  <!-- ===== TAB ===== -->
+  <div class="tabstrip" id="tabstrip" role="tablist"></div>
 
-  <div class="viewport" id="top">
+  <!-- ===== HALAMAN ===== -->
+  <main class="viewport" id="viewport">
 
-    <div class="center">
-      <h1 id="site-title">Ananda Bintang Purwaramdhona</h1>
-      <p class="small"><b id="site-tagline">Lecturer &middot; Researcher &middot; Writer</b></p>
+    <div class="findbar" id="findbar">
+      <label for="q">Cari:</label>
+      <input type="text" id="q" placeholder="judul, jurnal, media, kegiatan&hellip;" autocomplete="off">
+      <button type="button" class="small" data-act="find-clear">Bersihkan</button>
+      <button type="button" class="small" data-act="find-close">Tutup</button>
+      <span class="result" id="findresult"></span>
     </div>
 
-    <hr class="rainbow">
+    <section class="tabpane" id="pane-beranda">
+      <div class="hero">
+        <img src="assets/img/abp-logo.png" alt="Logo ABP">
+        <div class="hero-text">
+          <h1 class="wordart" id="hero-name" data-text="Ananda Bintang">Ananda Bintang</h1>
+          <p class="tagline" id="hero-tagline">Lecturer &middot; Researcher &middot; Writer</p>
+          <p class="interests" id="hero-interests"></p>
+        </div>
+      </div>
 
-    <div class="marquee"><span id="marquee-text">Ananda Bintang Purwaramdhona</span></div>
-
-    <div class="frameset">
-
-      <div class="sidebar">
-
+      <div class="grid2">
         <div class="panel">
-          <div class="panel-title">NAVIGASI</div>
+          <div class="panel-title">IDENTITAS DIRI</div>
+          <div class="panel-body"><dl class="spec" id="identity"></dl></div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">RINGKASAN</div>
+          <div class="panel-body">
+            <p id="bio"></p>
+            <dl class="spec" id="stats"></dl>
+          </div>
+        </div>
+      </div>
+
+      <h3>Tautan Cepat</h3>
+      <div class="linkgrid" id="quicklinks"></div>
+    </section>
+
+    <section class="tabpane" id="pane-pendidikan" hidden>
+      <div class="section-head"><h2 class="wordart" data-text="Pendidikan">Pendidikan</h2><span class="count" id="c-pendidikan"></span></div>
+      <div class="tablewrap"><table class="data" id="t-pendidikan"></table></div>
+    </section>
+
+    <section class="tabpane" id="pane-pekerjaan" hidden>
+      <div class="section-head"><h2 class="wordart" data-text="Pekerjaan">Pekerjaan</h2><span class="count" id="c-pekerjaan"></span></div>
+      <div class="tablewrap"><table class="data" id="t-pekerjaan"></table></div>
+    </section>
+
+    <section class="tabpane" id="pane-publikasi" hidden>
+      <div class="section-head"><h2 class="wordart" data-text="Publikasi Ilmiah">Publikasi Ilmiah</h2><span class="count" id="c-publikasi"></span></div>
+      <div class="tablewrap"><table class="data" id="t-publikasi"></table></div>
+      <p class="small gray" style="margin-top:10px">Judul dapat diklik untuk membuka naskah atau profil Google Scholar.</p>
+    </section>
+
+    <section class="tabpane" id="pane-populer" hidden>
+      <div class="section-head"><h2 class="wordart" data-text="Tulisan Populer">Tulisan Populer</h2><span class="count" id="c-populer"></span></div>
+      <div class="panel" style="margin-bottom:12px">
+        <div class="panel-title">SARING MEDIA</div>
+        <div class="panel-body" id="mediafilter" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+      </div>
+      <div class="tablewrap"><table class="data" id="t-populer"></table></div>
+    </section>
+
+    <section class="tabpane" id="pane-seminar" hidden>
+      <div class="section-head"><h2 class="wordart" data-text="Seminar &amp; Pembicara">Seminar &amp; Pembicara</h2><span class="count" id="c-seminar"></span></div>
+      <div class="tablewrap"><table class="data" id="t-seminar"></table></div>
+    </section>
+
+    <section class="tabpane" id="pane-sertifikasi" hidden>
+      <div class="section-head"><h2 class="wordart" data-text="Sertifikasi">Sertifikasi</h2><span class="count" id="c-sertifikasi"></span></div>
+      <div class="tablewrap"><table class="data" id="t-sertifikasi"></table></div>
+    </section>
+
+    <section class="tabpane" id="pane-pengabdian" hidden>
+      <div class="section-head"><h2 class="wordart" data-text="Pengabdian Masyarakat">Pengabdian Masyarakat</h2><span class="count" id="c-pengabdian"></span></div>
+      <div class="tablewrap"><table class="data" id="t-pengabdian"></table></div>
+    </section>
+
+    <section class="tabpane" id="pane-proyek" hidden>
+      <div class="section-head"><h2 class="wordart" data-text="Proyek &amp; Tautan">Proyek &amp; Tautan</h2><span class="count" id="c-proyek"></span></div>
+      <div id="linkgroups"></div>
+    </section>
+
+    <section class="tabpane" id="pane-kontak" hidden>
+      <div class="section-head"><h2 class="wordart" data-text="Kontak">Kontak</h2></div>
+      <div class="grid2">
+        <div class="panel">
+          <div class="panel-title">HUBUNGI SAYA</div>
+          <div class="panel-body"><dl class="spec" id="contact"></dl></div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">BERKAS</div>
           <div class="panel-body">
             <ul class="ball">
-              <li><a href="#profil">Profil</a></li>
-              <li><a href="#kajian">Bidang Kajian</a></li>
-              <li><a href="#publikasi">Publikasi <span class="newtag blink">BARU</span></a></li>
-              <li><a href="#kontak">Kontak</a></li>
-              <li><a href="edit.html">Admin</a></li>
+              <li><a href="assets/CV-Ananda-Bintang-Purwaramdhona.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a></li>
+              <li><a href="#" data-act="admin">Panel Admin (butuh kata sandi)</a></li>
             </ul>
           </div>
         </div>
-
-        <div class="panel">
-          <div class="panel-title">PENGUNJUNG</div>
-          <div class="panel-body center">
-            <div class="counter" id="counter"><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b></div>
-            <p class="small gray" style="margin:6px 0 0">sejak 01-01-2000</p>
-          </div>
-        </div>
-
-        <div class="panel">
-          <div class="panel-title">INFORMASI</div>
-          <div class="panel-body small">
-            <p style="margin:0 0 4px"><b>Publikasi:</b> <span id="pub-count">&mdash;</span></p>
-            <p style="margin:0"><b>Diperbarui:</b> <span id="lastmod">&mdash;</span></p>
-          </div>
-        </div>
-
       </div>
+    </section>
 
-      <div class="content">
+  </main>
 
-        <a id="profil"></a>
-        <h2>Profil</h2>
-        <p id="bio">Memuat...</p>
-
-        <hr>
-
-        <a id="kajian"></a>
-        <h2>Bidang Kajian</h2>
-        <ul class="ball blue">
-          <li>Humaniora Digital</li>
-          <li>Kajian Budaya</li>
-          <li>Puisi Kontemporer</li>
-        </ul>
-
-        <hr>
-
-        <a id="publikasi"></a>
-        <h2>Publikasi</h2>
-        <div id="pub"><p class="gray">Memuat...</p></div>
-
-        <hr>
-
-        <a id="kontak"></a>
-        <h2>Kontak</h2>
-        <div class="emailbox">
-          <b>Surel:</b> <span id="email">memuat...</span>
-        </div>
-
-        <hr class="rainbow">
-
-        <div class="footer-strip">
-          <p class="small">
-            <a href="#top">[ Atas ]</a>
-            <a href="#publikasi">[ Publikasi ]</a>
-            <a href="edit.html">[ Admin ]</a>
-          </p>
-          <p class="small gray">
-            &copy; 2000&ndash;<span id="year">2026</span> Ananda Bintang Purwaramdhona
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
+  <!-- ===== BARIS STATUS ===== -->
   <div class="statusbar">
     <div class="lock"></div>
     <div class="msg" id="status">Selesai</div>
-    <div class="prog"><i></i></div>
+    <div class="zone" id="zone">Zona Internet</div>
     <div class="grip"></div>
   </div>
 
+</div>
+
+<!-- ===== ASISTEN ===== -->
+<div id="clippy">
+  <div class="bubble">
+    <p id="clippy-text">Halo!</p>
+    <div class="row">
+      <button type="button" class="small" data-act="clippy-tip">Tips lain</button>
+      <button type="button" class="small" data-act="clippy-hide">Sembunyikan</button>
+    </div>
+  </div>
+  <button class="guy" type="button" data-act="clippy-tip" title="Klik saya" aria-label="Asisten">
+    <svg viewBox="0 0 62 82" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#8c9199" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 30 V18a12 12 0 0 1 24 0v46a8 8 0 0 1-16 0V24a5 5 0 0 1 10 0v38"/>
+      </g>
+      <g fill="none" stroke="#c9ced6" stroke-width="2.4" stroke-linecap="round">
+        <path d="M20 30 V18a12 12 0 0 1 24 0v46a8 8 0 0 1-16 0V24a5 5 0 0 1 10 0v38"/>
+      </g>
+      <g class="eye"><ellipse cx="25" cy="26" rx="7.5" ry="8.5" fill="#fff" stroke="#333" stroke-width="1.6"/><circle cx="26.5" cy="27" r="3.4" fill="#111"/></g>
+      <g class="eye"><ellipse cx="41" cy="26" rx="7.5" ry="8.5" fill="#fff" stroke="#333" stroke-width="1.6"/><circle cx="42.5" cy="27" r="3.4" fill="#111"/></g>
+      <path d="M28 40 q5 5 10 0" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+  </button>
+</div>
+<div id="clippy-tab"><button type="button" class="small" data-act="clippy-show">Tampilkan asisten</button></div>
+
+<!-- ===== TASKBAR ===== -->
+<div class="taskbar">
+  <button id="startbtn" type="button"><img src="assets/img/abp-icon.png" alt="">Mulai</button>
+  <div class="tasks"><button class="taskitem" type="button" data-act="home" id="taskitem">ABP Academic</button></div>
+  <div class="tray"><span class="clock" id="clock">--:--</span></div>
+</div>
+
+<div id="startmenu">
+  <ul id="startlist"></ul>
+</div>
+
+<!-- ===== DIALOG KATA SANDI ===== -->
+<div class="overlay" id="pwdlg">
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="pw-title">
+    <div class="titlebar">
+      <div class="tb-icon"></div>
+      <div class="tb-text" id="pw-title">Diperlukan Kata Sandi</div>
+      <div class="tb-buttons"><button class="tb-btn" type="button" data-act="pw-cancel">&times;</button></div>
+    </div>
+    <div class="dialog-body">
+      <div class="dico dico-key"></div>
+      <div class="grow">
+        <p id="pw-msg">Halaman ini dilindungi. Masukkan kata sandi untuk melanjutkan.</p>
+        <label class="fld" for="pw">Kata sandi</label>
+        <input type="password" id="pw" autocomplete="current-password">
+        <p class="err" id="pw-err"></p>
+      </div>
+    </div>
+    <div class="dialog-foot">
+      <button type="button" data-act="pw-ok">OK</button>
+      <button type="button" data-act="pw-cancel">Batal</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DIALOG INFO ===== -->
+<div class="overlay" id="infodlg">
+  <div class="dialog wide" role="dialog" aria-modal="true" aria-labelledby="info-title">
+    <div class="titlebar">
+      <div class="tb-icon"></div>
+      <div class="tb-text" id="info-title">Tentang</div>
+      <div class="tb-buttons"><button class="tb-btn" type="button" data-act="info-close">&times;</button></div>
+    </div>
+    <div class="dialog-body">
+      <div class="dico dico-info"></div>
+      <div class="grow" id="info-body"></div>
+    </div>
+    <div class="dialog-foot"><button type="button" data-act="info-close">OK</button></div>
+  </div>
 </div>
 
 <script src="assets/js/main.js"></script>

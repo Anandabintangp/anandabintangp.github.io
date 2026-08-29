@@ -1,6 +1,16 @@
 {
-  "name": "Ananda Bintang Purwaramdhona",
+  "name": "Ananda Bintang Purwaramdhona, M.Hum.",
   "title": "Lecturer | Researcher | Writer",
-  "bio": "Humaniora Digital, Puisi Kontemporer, dan Kajian Budaya",
-  "email": "Contact.anandabintang@gmail.com"
+  "bio": "Dosen, peneliti, dan penulis dengan minat riset Humaniora Digital, Puisi Kontemporer, dan Kajian Budaya. Mengajar di Universitas Padjadjaran dan Institut Teknologi Bandung.",
+  "email": "Contact.anandabintang@gmail.com",
+  "gender": "Laki-laki",
+  "birth": "Ciamis, 26 Desember 2000",
+  "phone": "087732014665",
+  "interests": [
+    "Humaniora Digital",
+    "Puisi Kontemporer",
+    "Kajian Budaya"
+  ],
+  "scholar": "https://scholar.google.com/citations?user=ZdtVlxEAAAAJ&hl=en&authuser=6",
+  "linktree": "https://linktr.ee/tulisanbintang"
 }

@@ -1,0 +1,451 @@
+{
+  "education": [
+    {
+      "level": "S2",
+      "school": "Universitas Padjadjaran",
+      "field": "Kajian Budaya",
+      "year": "2024"
+    },
+    {
+      "level": "S1",
+      "school": "Universitas Padjadjaran",
+      "field": "Sastra Indonesia",
+      "year": "2023"
+    }
+  ],
+  "work": [
+    {
+      "org": "Universitas Padjadjaran",
+      "role": "Dosen Luar Biasa Sastra Indonesia, Fakultas Ilmu Budaya",
+      "year": "Februari 2024 – sekarang"
+    },
+    {
+      "org": "Institut Teknologi Bandung",
+      "role": "Dosen Tidak Tetap TPB MKWU Tata Tulis Karya Ilmiah dan Mata Kuliah Pilihan Umum Jurnalisme Sains, Teknologi, dan Seni",
+      "year": "Juni 2024 – sekarang"
+    },
+    {
+      "org": "Tempo.co",
+      "role": "Jurnalis",
+      "year": "Juni 2023 – Juni 2024"
+    }
+  ],
+  "popular": [
+    {
+      "year": "2024",
+      "title": "149.132 Kata untuk Bandung dan Jawa Barat, Membaca Pemetaan Pilkada dari Akun Instagram para Calon Pemimpin Daerah",
+      "media": "BandungBergerak.id",
+      "url": "https://bandungbergerak.id/article/detail/1598387/149-132-kata-untuk-bandung-dan-jawa-barat-membaca-pemetaan-pilkada-dari-akun-instagram-para-calon-pemimpin-daerah"
+    },
+    {
+      "year": "2024",
+      "title": "Ridwan Kamil Klaim Terima Aspirasi Mahasiswa Jawa Barat Bergerak untuk Prabowo, Ketua BEM Unpad: Aksinya Bayaran",
+      "media": "Tempo.co",
+      "url": "https://www.tempo.co/penulis/Ananda%20Bintang%20Purwaramdhona-873"
+    },
+    {
+      "year": "2024",
+      "title": "Refleksi Akhir Tahun 2023, FSK ITB: Intelektual Semakin Tumpul, Kekuasaan Kian Koruptif",
+      "media": "Tempo.co",
+      "url": "https://www.tempo.co/penulis/Ananda%20Bintang%20Purwaramdhona-873"
+    },
+    {
+      "year": "2021",
+      "title": "Sejarah Indie Pop dan Sarah Records yang Menantang Kapitalisme dan Patriarki melalui Musik",
+      "media": "Pena Budaya",
+      "url": "https://www.penabudaya.com/sejarah-indie-pop-dan-sarah-records-yang-menantang-kapitalisme-dan-patriarki-melalui-musik/"
+    },
+    {
+      "year": "2021",
+      "title": "Tak Ada Yang Abadi Selain Digitalisasi: Upaya Irama Nusantara Mengarsipkan Musik Populer Indonesia",
+      "media": "Pena Budaya",
+      "url": "https://www.penabudaya.com/tak-ada-yang-abadi-selain-digitalisasi-upaya-irama-nusantara-mengarsipkan-musik-populer-indonesia/"
+    },
+    {
+      "year": "2021",
+      "title": "They Call Me Babu: Seutas Kisah Sejarah Babu pada Masa Kolonial Belanda",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/they-call-me-babu-seutas-kisah-sejarah-babu-pada-masa-kolonial-belanda/"
+    },
+    {
+      "year": "2021",
+      "title": "Sejarah 'Ayang-ayang Gung', Lagu Anak Sunda tentang Bangsawan yang Haus Kekuasaan",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/sejarah-ayang-ayang-gung-lagu-anak-sunda-tentang-bangsawan-yang-haus-kekuasaan/"
+    },
+    {
+      "year": "2021",
+      "title": "Upload: Bagaimana Jadinya bila Manusia Menciptakan Alam Baka?",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/author/ananda-bintang/"
+    },
+    {
+      "year": "2021",
+      "title": "Cerpen: Kisah Sedih Barok",
+      "media": "Biem.co",
+      "url": "https://www.biem.co/read/2021/02/06/73776/cerpen-ananda-bintang-kisah-sedih-barok/"
+    },
+    {
+      "year": "",
+      "title": "\"Hidup Korban, Jangan Diam, Lawan!\" — Aksi Kamisan",
+      "media": "Pena Budaya",
+      "url": "https://www.penabudaya.com/aksi-kamisan-hidup-korban-jangan-diam-lawan/"
+    },
+    {
+      "year": "",
+      "title": "Robohnya Bodhi Kami: Memoar Pohon Tua dan Obituari Kenangan",
+      "media": "Pena Budaya",
+      "url": "https://www.penabudaya.com/robohnya-bodhi-kami-memoar-pohon-tua-dan-obituari-kenangan/"
+    },
+    {
+      "year": "",
+      "title": "Janji Zorbas dan Bacaan Anak yang Dibutuhkan",
+      "media": "Pena Budaya",
+      "url": "http://www.penabudaya.com/janji-zorbas-dan-bacaan-anak-yang-dibutuhkan/"
+    },
+    {
+      "year": "",
+      "title": "Berebut Ruang di Google Meet dan Raung Senioritas yang Tak Kunjung Redam",
+      "media": "Pena Budaya",
+      "url": "https://www.penabudaya.com/berebut-ruang-di-google-meet-dan-raung-senioritas-yang-tak-kunjung-redam/"
+    },
+    {
+      "year": "",
+      "title": "'Lewat Djam Malam', Kegelisahan Bekas Pejuang Melintas Zaman",
+      "media": "Pena Budaya",
+      "url": "https://www.penabudaya.com/lewat-djam-malam-kegelisahan-bekas-pejuang-melintas-zaman/"
+    },
+    {
+      "year": "",
+      "title": "Rental PS Bikin Saya Jadi Konglomerat Cilik",
+      "media": "Remotivi",
+      "url": "https://www.remotivi.or.id/bangkubelakang/53/rental-ps-bikin-saya-jadi-konglomerat-cilik"
+    },
+    {
+      "year": "",
+      "title": "Baru Berjalan Satu Bulan, Persma Fakultas Kami \"Diintimidasi\" oleh Para Pejabat BEM Fakultas Sendiri",
+      "media": "Remotivi",
+      "url": "https://www.remotivi.or.id/bangkubelakang/65/baru-berjalan-satu-bulan-persma-fakultas-kami-diintimidasi-oleh-para-pejabat-bem-fakultas-sendiri"
+    },
+    {
+      "year": "",
+      "title": "Potret Kekalahan dalam Empat Fragmen Aib dan Nasib",
+      "media": "Cerano.id",
+      "url": "https://cerano.id/potret-kekalahan-dalam-empat-fragmen-aib-dan-nasib/"
+    },
+    {
+      "year": "",
+      "title": "Ujian Masuk Perguruan Tinggi Adalah Ujian Paling Nggak Masuk Akal!",
+      "media": "Susah Tidur",
+      "url": "https://susahtidur.net/ujian-masuk-perguruan-tinggi-adalah-ujian-paling-nggak-masuk-akal/"
+    },
+    {
+      "year": "",
+      "title": "Dari Bu Sisca Kita Belajar Jangan Terlalu Cepat Membuat Kesimpulan",
+      "media": "Susah Tidur",
+      "url": "https://susahtidur.net/dari-bu-sisca-kita-belajar-jangan-terlalu-cepat-membuat-kesimpulan/"
+    },
+    {
+      "year": "",
+      "title": "'The White Tiger' Menelanjangi Kemiskinan Struktural India dengan Cara non-Bollywood",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/the-white-tiger-menelanjangi-kemiskinan-struktural-india-dengan-cara-non-bollywood/"
+    },
+    {
+      "year": "",
+      "title": "Mari Berandai-andai jika Keluarga di Film 'Minari' Berasal dari Indonesia",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/mari-berandai-andai-jika-keluarga-di-film-minari-berasal-dari-indonesia/"
+    },
+    {
+      "year": "",
+      "title": "Film 'The Devil All the Time', Agama dan Pergumulan Setan di Tubuh Manusia",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/film-the-devil-all-the-time-agama-dan-pergumulan-setan-di-tubuh-manusia/"
+    },
+    {
+      "year": "",
+      "title": "Strategi Promosi Film 'Seperti Dendam Rindu Harus Dibayar Tuntas' Memang Sempat Menipu",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/strategi-promosi-film-seperti-dendam-rindu-harus-dibayar-tuntas-memang-sempat-menipu/"
+    },
+    {
+      "year": "",
+      "title": "Review The Umbrella Academy Season 2: Superhero Tak Hanya Menyelamatkan Dunia, tapi Juga Keluarga",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/review-the-umbrella-academy-season-2-superhero-tak-hanya-menyelamatkan-dunia-tapi-juga-keluarga/"
+    },
+    {
+      "year": "",
+      "title": "Ridwan Kamil, Gubernur Populis yang Malu-Malu Mau Jadi Capres 2024",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/ridwan-kamil-gubernur-populis-yang-malu-malu-mau-jadi-capres-2024/"
+    },
+    {
+      "year": "",
+      "title": "Jokowi Cuma Peduli Sama Gimmick Pakaian Adat, Bukan Masyarakat Adatnya",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/jokowi-cuma-peduli-sama-gimmick-pakaian-adat-bukan-masyarakat-adatnya/"
+    },
+    {
+      "year": "",
+      "title": "Melihat Cara Buzzer Polandia Bekerja",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/melihat-cara-buzzer-polandia-bekerja/"
+    },
+    {
+      "year": "",
+      "title": "Cara Cepat Jadi Pejabat adalah dengan Jualan Martabak",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/cara-cepat-jadi-pejabat-adalah-dengan-jualan-martabak/"
+    },
+    {
+      "year": "",
+      "title": "Kalimat \"Siap, Bang Jago!\" dan Tanda bahwa Kita Sukar Menerima Kritik",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/kalimat-siap-bang-jago-dan-tanda-bahwa-kita-sukar-menerima-kritik/"
+    },
+    {
+      "year": "",
+      "title": "Kemunculan Akun @polisimaba Menunjukkan bahwa Ospek Lebih Baik Ditiadakan",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/kemunculan-akun-polisimaba-menunjukkan-bahwa-ospek-lebih-baik-ditiadakan/"
+    },
+    {
+      "year": "",
+      "title": "Di Ospek Jurusan Saya, Kakak Tingkat Menyamar Jadi Intel",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/di-ospek-jurusan-saya-kakak-tingkat-menyamar-jadi-intel/"
+    },
+    {
+      "year": "",
+      "title": "Gelagat Mahasiswa yang Biasanya Bakal Nyalon Jadi Ketua",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/gelagat-mahasiswa-yang-biasanya-bakal-nyalon-jadi-ketua/"
+    },
+    {
+      "year": "",
+      "title": "3 Kemungkinan yang Patut Dicurigai jika Kamu Jadi Close Friends Instagram Seseorang",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/3-kemungkinan-yang-patut-dicurigai-jika-kamu-jadi-close-friends-instagram-seseorang/"
+    },
+    {
+      "year": "",
+      "title": "3 Lagu Iwan Fals yang Kalau Diciptakan Sekarang, Pasti Rame kayak Tilik",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/3-lagu-iwan-fals-yang-kalau-diciptakan-sekarang-pasti-rame-kayak-tilik/"
+    },
+    {
+      "year": "",
+      "title": "4 Kekejaman yang Sering Diterima Orang Cadel",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/4-kekejaman-yang-sering-diterima-orang-cadel/"
+    },
+    {
+      "year": "",
+      "title": "Perang Teh Kemasan, dari yang Paling Nggak Enak Sampai yang Paling Enak",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/perang-teh-kemasan-dari-yang-paling-nggak-enak-sampai-yang-paling-enak/"
+    },
+    {
+      "year": "",
+      "title": "Di Kehidupan Serbadaring, Divisi Desain Jadi Divisi yang Paling Nambah Capeknya",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/di-kehidupan-serbadaring-divisi-desain-jadi-divisi-yang-paling-nambah-capeknya/"
+    },
+    {
+      "year": "",
+      "title": "Tipe-tipe Suporter Sepak Bola Indonesia Berdasarkan Tribun Stadion yang Mereka Pilih",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/tipe-tipe-suporter-sepak-bola-indonesia-berdasarkan-tribun-stadion-yang-mereka-pilih/"
+    },
+    {
+      "year": "",
+      "title": "Yang Harus Dilakukan Pemerintah biar Nggak Ada Lagi Orang yang Ngeyel Keluar Rumah",
+      "media": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/biar-nggak-ada-lagi-orang-ngeyel-keluar-rumah/"
+    }
+  ],
+  "seminars": [
+    {
+      "year": "2025",
+      "event": "Seminar Internasional Linguistik",
+      "host": "Universitas Padjadjaran",
+      "role": "Pembicara"
+    },
+    {
+      "year": "2024",
+      "event": "Menulis untuk Perubahan Nyata: Membangun Kesadaran dan Aksi Melalui Tulisan",
+      "host": "Ganesha Scholar Academy, Kementerian Inkubasi Keluarga Mahasiswa ITB",
+      "role": "Pembicara"
+    },
+    {
+      "year": "2023",
+      "event": "Seminar Gender, Seksualitas, dan Hegemoni Kebudayaan",
+      "host": "Magister Kajian Budaya Universitas Padjadjaran",
+      "role": "Pembicara"
+    },
+    {
+      "year": "2023",
+      "event": "Pendidikan Jurnalistik Tingkat Dasar Pena Budaya",
+      "host": "Pena Budaya LPM FIB Universitas Padjadjaran",
+      "role": "Pembicara"
+    },
+    {
+      "year": "2023",
+      "event": "Seminar Kelas Sastra Gelanggang Seni Sastra Teater dan Film",
+      "host": "GSSTF Unpad",
+      "role": "Pembicara"
+    },
+    {
+      "year": "2022",
+      "event": "Penulisan Populer: Menulis untuk Semua Orang",
+      "host": "Pena Budaya LPM FIB Universitas Padjadjaran",
+      "role": "Pembicara"
+    },
+    {
+      "year": "2021",
+      "event": "Skill Class 4.0 Geological Center of Journalistic Unpad",
+      "host": "Pers Mahasiswa Fakultas Teknik Geologi Unpad Geocentric",
+      "role": "Pembicara"
+    },
+    {
+      "year": "2021",
+      "event": "Dialog Media: Eksplorasi Media bersama Narasi, \"Mengulik Alur Produksi Berita dan Kehidupan Redaksi di Era Digital\"",
+      "host": "Pena Budaya LPM FIB Universitas Padjadjaran",
+      "role": "Moderator"
+    }
+  ],
+  "certifications": [
+    {
+      "year": "2025",
+      "title": "Program Sertifikasi Pengajar Bahasa Indonesia untuk Penutur Asing (BIPA): Teaching Methodology",
+      "issuer": "APPBIPA Bali"
+    },
+    {
+      "year": "2025",
+      "title": "Pelatihan Tematik di BIPA UI: Mengulik Praktik Pengajaran BIPA",
+      "issuer": "BIPA Universitas Indonesia"
+    },
+    {
+      "year": "2025",
+      "title": "Program Pelatihan Pengembangan Bahan Ajar BIPA Berbasis Kurikulum Internasional (International Baccalaureate Diploma Programme)",
+      "issuer": ""
+    }
+  ],
+  "service": [
+    {
+      "year": "2025",
+      "title": "Rebranding Desa Banyumulek, Nusa Tenggara Barat, sebagai Desa Wisata melalui Kerajinan Gerabah dan Pelatihan Motivasi Berprestasi untuk Para Perajin Gerabah"
+    },
+    {
+      "year": "2025",
+      "title": "Pelatihan Motivasi Berprestasi untuk Meningkatkan Minat Melanjutkan Pendidikan pada Siswa Pesantren Persis Kota Banjar, Kabupaten Banjar, Jawa Barat"
+    },
+    {
+      "year": "2025",
+      "title": "Inisiasi Pemberdayaan Ekonomi Kreatif Berbasis Daur Ulang Plastik di Desa Cijambu"
+    },
+    {
+      "year": "2024",
+      "title": "Pelatihan Komunikasi Verbal dan Non-Verbal serta Media Digital bagi Pemandu Wisata di Labuan Bajo"
+    },
+    {
+      "year": "2024",
+      "title": "Pemberdayaan UMKM Pangkep, Sulawesi Selatan melalui Pelatihan Desain dan Kemasan ITB"
+    }
+  ],
+  "links": [
+    {
+      "group": "Proyek Web",
+      "label": "Sastra Indonesia Unpad",
+      "url": "https://anandabintangp.github.io/sasindounpad",
+      "note": "Situs program studi",
+      "lock": false
+    },
+    {
+      "group": "Proyek Web",
+      "label": "Sastra Indonesia Unpad — Dosen",
+      "url": "https://anandabintangp.github.io/sasindounpad/dosen",
+      "note": "Direktori dosen",
+      "lock": false
+    },
+    {
+      "group": "Proyek Web",
+      "label": "ITB TTKI",
+      "url": "https://anandabintangp.github.io/ITBTTKI/",
+      "note": "Tata Tulis Karya Ilmiah ITB",
+      "lock": false
+    },
+    {
+      "group": "Proyek Web",
+      "label": "ITB TTKI — Dosen",
+      "url": "https://anandabintangp.github.io/ITBTTKI/dosen",
+      "note": "Direktori dosen",
+      "lock": false
+    },
+    {
+      "group": "Proyek Web",
+      "label": "Portal Operator Pusat Bahasa FIB Unpad",
+      "url": "https://pusatbahasa.fib.unpad.ac.id/portal-operator/",
+      "note": "Butuh kata sandi",
+      "lock": true
+    },
+    {
+      "group": "Humaniora Digital",
+      "label": "Melihat 5.068 Sampul Buku",
+      "url": "https://anandabintangp.github.io/melihat-5.068-sampul-buku/",
+      "note": "Proyek penulisan & visualisasi data",
+      "lock": false
+    },
+    {
+      "group": "Arsip Penulis",
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?user=ZdtVlxEAAAAJ&hl=en&authuser=6",
+      "note": "Publikasi & sitasi",
+      "lock": false
+    },
+    {
+      "group": "Arsip Penulis",
+      "label": "Linktree",
+      "url": "https://linktr.ee/tulisanbintang",
+      "note": "Kumpulan seluruh tautan",
+      "lock": false
+    },
+    {
+      "group": "Arsip Penulis",
+      "label": "Tempo.co",
+      "url": "https://www.tempo.co/penulis/Ananda%20Bintang%20Purwaramdhona-873",
+      "note": "Halaman penulis",
+      "lock": false
+    },
+    {
+      "group": "Arsip Penulis",
+      "label": "Terminal Mojok",
+      "url": "https://mojok.co/terminal/author/ananda-bintang/",
+      "note": "Halaman penulis",
+      "lock": false
+    },
+    {
+      "group": "Arsip Penulis",
+      "label": "Kumparan",
+      "url": "https://kumparan.com/ananda-bintang-1653823240189162902",
+      "note": "Halaman penulis",
+      "lock": false
+    },
+    {
+      "group": "Arsip Penulis",
+      "label": "Pena Budaya",
+      "url": "https://www.penabudaya.com/author/ananda-bintang/",
+      "note": "Halaman penulis",
+      "lock": false
+    },
+    {
+      "group": "Arsip Penulis",
+      "label": "Puisi di Buruan.co",
+      "url": "https://www.buruan.co/puisi-puisi-ananda-bintang/",
+      "note": "Kumpulan puisi",
+      "lock": false
+    }
+  ]
+}
