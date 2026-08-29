@@ -1,27 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<title>Admin Editor</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel Admin &mdash; ABP Academic</title>
+<meta name="robots" content="noindex">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<nav><b>Admin Panel</b><a href="index.html">View Site</a></nav>
 
-<main>
-<section>
-<h2>Edit Profile</h2>
-<label>Nama</label>
-<input id="name"><br>
-<label>Bio</label>
-<textarea id="bio"></textarea><br>
-<label>Email</label>
-<input id="email"><br>
-<button onclick="save()">Generate JSON</button>
-<p>
-Catatan: GitHub Pages membutuhkan commit melalui GitHub API atau workflow untuk menyimpan perubahan permanen.
-</p>
-</section>
-</main>
+<div class="browser">
+
+  <div class="titlebar">
+    <div class="tb-icon"></div>
+    <div class="tb-text">ABP Academic &mdash; [Panel Admin]</div>
+    <div class="tb-buttons">
+      <button class="tb-btn" type="button" aria-hidden="true" tabindex="-1">_</button>
+      <button class="tb-btn" type="button" aria-hidden="true" tabindex="-1">&#9633;</button>
+      <button class="tb-btn" type="button" aria-hidden="true" tabindex="-1">&times;</button>
+    </div>
+  </div>
+
+  <div class="menubar">
+    <span><u>B</u>erkas</span><span><u>U</u>bah</span><span><u>T</u>ampilan</span>
+    <span><u>K</u>unjungi</span><span><u>P</u>enanda</span><span><u>O</u>psi</span>
+    <span><u>J</u>endela</span><span>Ban<u>t</u>uan</span>
+  </div>
+
+  <div class="toolbar">
+    <a class="tool" href="index.html"><i class="i-back"></i><span>Kembali</span></a>
+    <a class="tool" href="#hasil"><i class="i-fwd"></i><span>Maju</span></a>
+    <a class="tool" href="index.html"><i class="i-home"></i><span>Beranda</span></a>
+    <a class="tool" href="edit.html"><i class="i-reload"></i><span>Muat Ulang</span></a>
+    <a class="tool" href="#profil-box"><i class="i-find"></i><span>Cari</span></a>
+    <a class="tool" href="#top" onclick="window.print();return false;"><i class="i-print"></i><span>Cetak</span></a>
+    <a class="tool" href="#hasil"><i class="i-mail"></i><span>Hasil</span></a>
+    <a class="tool" href="edit.html"><i class="i-edit"></i><span>Admin</span></a>
+    <a class="tool" href="index.html"><i class="i-stop"></i><span>Henti</span></a>
+  </div>
+
+  <div class="locbar">
+    <label>Alamat:</label>
+    <div class="url">http://anandabintangp.github.io/edit.html</div>
+    <div class="spinner"></div>
+  </div>
+
+  <div class="dirbar">
+    <a href="index.html">Lihat Situs</a>
+    <a href="#profil-box">Profil</a>
+    <a href="#pubs-box">Publikasi</a>
+    <a href="#hasil">Hasil JSON</a>
+    <a href="#bantuan">Cara Simpan</a>
+  </div>
+
+  <div class="viewport" id="top">
+
+    <div class="center">
+      <h1>Panel Admin</h1>
+      <p class="small gray">Pengelola isi situs</p>
+    </div>
+
+    <hr class="rainbow">
+
+    <div class="frameset">
+
+      <div class="sidebar">
+        <div class="panel">
+          <div class="panel-title">MENU ADMIN</div>
+          <div class="panel-body">
+            <ul class="ball green">
+              <li><a href="#profil-box">Profil</a></li>
+              <li><a href="#pubs-box">Publikasi</a></li>
+              <li><a href="#hasil">Hasil JSON</a></li>
+              <li><a href="#bantuan">Cara Simpan</a></li>
+              <li><a href="index.html">Lihat Situs</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">BERKAS DATA</div>
+          <div class="panel-body small">
+            <p style="margin:0 0 4px">data/profile.json</p>
+            <p style="margin:0">data/publications.json</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+
+        <a id="profil-box"></a>
+        <fieldset>
+          <legend>Profil</legend>
+
+          <label class="fld" for="name">Nama</label>
+          <input type="text" id="name">
+
+          <label class="fld" for="title">Titel</label>
+          <input type="text" id="title">
+
+          <label class="fld" for="bio">Bio</label>
+          <textarea id="bio" rows="4"></textarea>
+
+          <label class="fld" for="email">Surel</label>
+          <input type="text" id="email">
+        </fieldset>
+
+        <a id="pubs-box"></a>
+        <fieldset>
+          <legend>Publikasi</legend>
+
+          <div class="pubrow" style="font-family:'MS Sans Serif',Tahoma,sans-serif;font-size:11px;font-weight:bold">
+            <div>TAHUN</div><div>JUDUL</div><div>JURNAL</div><div>&nbsp;</div>
+          </div>
+
+          <div id="pubrows"></div>
+
+          <div class="btnrow">
+            <button type="button" class="small" id="btn-add">+ Tambah Baris</button>
+          </div>
+        </fieldset>
+
+        <a id="hasil"></a>
+        <fieldset>
+          <legend>Hasil JSON</legend>
+
+          <div class="btnrow" style="margin-top:0">
+            <button type="button" id="btn-gen">Buat</button>
+            <button type="button" id="btn-copy-profile">Salin profil</button>
+            <button type="button" id="btn-copy-pubs">Salin publikasi</button>
+            <button type="button" id="btn-dl-profile">Unduh profile.json</button>
+            <button type="button" id="btn-dl-pubs">Unduh publications.json</button>
+          </div>
+
+          <label class="fld" for="out-profile">data/profile.json</label>
+          <textarea class="mono-out" id="out-profile" spellcheck="false" readonly></textarea>
+
+          <label class="fld" for="out-pubs">data/publications.json</label>
+          <textarea class="mono-out" id="out-pubs" spellcheck="false" readonly></textarea>
+        </fieldset>
+
+        <a id="bantuan"></a>
+        <div class="notebox">
+          <div class="ico"></div>
+          <div>
+            GitHub Pages bersifat statis, jadi perubahan di panel ini tidak otomatis tersimpan.
+            Salin atau unduh hasil JSON di atas, timpa berkas <code>data/profile.json</code> dan
+            <code>data/publications.json</code> di repositori, lalu commit. Untuk penyimpanan
+            langsung dari browser diperlukan integrasi GitHub API dengan personal access token
+            atau GitHub Actions workflow.
+          </div>
+        </div>
+
+        <hr class="rainbow">
+
+        <div class="footer-strip">
+          <p class="small"><a href="index.html">[ Lihat Situs ]</a> <a href="#top">[ Atas ]</a></p>
+          <p class="small gray">&copy; 2000&ndash;<span id="year">2026</span> Ananda Bintang Purwaramdhona</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="statusbar">
+    <div class="lock"></div>
+    <div class="msg" id="status">Selesai</div>
+    <div class="prog"><i></i></div>
+    <div class="grip"></div>
+  </div>
+
+</div>
 
 <script src="assets/js/editor.js"></script>
 </body>

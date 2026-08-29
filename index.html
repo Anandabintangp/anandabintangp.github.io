@@ -1,37 +1,158 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ananda Bintang Purwaramdhona</title>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<nav>
-<b>ABP Academic</b>
-<a href="edit.html">Admin Edit</a>
-</nav>
 
-<header>
-<h1>Ananda Bintang Purwaramdhona</h1>
-<p>Lecturer | Researcher | Writer</p>
-<p>Humaniora Digital · Kajian Budaya · Puisi Kontemporer</p>
-</header>
+<div class="browser">
 
-<main>
-<section>
-<h2>About</h2>
-<p id="bio"></p>
-</section>
+  <div class="titlebar">
+    <div class="tb-icon"></div>
+    <div class="tb-text">ABP Academic &mdash; [Ananda Bintang Purwaramdhona]</div>
+    <div class="tb-buttons">
+      <button class="tb-btn" type="button" aria-hidden="true" tabindex="-1">_</button>
+      <button class="tb-btn" type="button" aria-hidden="true" tabindex="-1">&#9633;</button>
+      <button class="tb-btn" type="button" aria-hidden="true" tabindex="-1">&times;</button>
+    </div>
+  </div>
 
-<section>
-<h2>Publications</h2>
-<div id="pub"></div>
-</section>
+  <div class="menubar">
+    <span><u>B</u>erkas</span><span><u>U</u>bah</span><span><u>T</u>ampilan</span>
+    <span><u>K</u>unjungi</span><span><u>P</u>enanda</span><span><u>O</u>psi</span>
+    <span><u>J</u>endela</span><span>Ban<u>t</u>uan</span>
+  </div>
 
-<section>
-<h2>Contact</h2>
-<p id="email"></p>
-</section>
-</main>
+  <div class="toolbar">
+    <a class="tool" href="#top"><i class="i-back"></i><span>Kembali</span></a>
+    <a class="tool" href="#kontak"><i class="i-fwd"></i><span>Maju</span></a>
+    <a class="tool" href="index.html"><i class="i-home"></i><span>Beranda</span></a>
+    <a class="tool" href="index.html"><i class="i-reload"></i><span>Muat Ulang</span></a>
+    <a class="tool" href="#publikasi"><i class="i-find"></i><span>Cari</span></a>
+    <a class="tool" href="#top" onclick="window.print();return false;"><i class="i-print"></i><span>Cetak</span></a>
+    <a class="tool" href="#kontak"><i class="i-mail"></i><span>Surel</span></a>
+    <a class="tool" href="edit.html"><i class="i-edit"></i><span>Admin</span></a>
+    <a class="tool" href="#top"><i class="i-stop"></i><span>Henti</span></a>
+  </div>
+
+  <div class="locbar">
+    <label>Alamat:</label>
+    <div class="url">http://anandabintangp.github.io/index.html</div>
+    <div class="spinner"></div>
+  </div>
+
+  <div class="dirbar">
+    <a href="#profil">Profil</a>
+    <a href="#kajian">Bidang Kajian</a>
+    <a href="#publikasi">Publikasi</a>
+    <a href="#kontak">Kontak</a>
+    <a href="edit.html">Admin</a>
+  </div>
+
+  <div class="viewport" id="top">
+
+    <div class="center">
+      <h1 id="site-title">Ananda Bintang Purwaramdhona</h1>
+      <p class="small"><b id="site-tagline">Lecturer &middot; Researcher &middot; Writer</b></p>
+    </div>
+
+    <hr class="rainbow">
+
+    <div class="marquee"><span id="marquee-text">Ananda Bintang Purwaramdhona</span></div>
+
+    <div class="frameset">
+
+      <div class="sidebar">
+
+        <div class="panel">
+          <div class="panel-title">NAVIGASI</div>
+          <div class="panel-body">
+            <ul class="ball">
+              <li><a href="#profil">Profil</a></li>
+              <li><a href="#kajian">Bidang Kajian</a></li>
+              <li><a href="#publikasi">Publikasi <span class="newtag blink">BARU</span></a></li>
+              <li><a href="#kontak">Kontak</a></li>
+              <li><a href="edit.html">Admin</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">PENGUNJUNG</div>
+          <div class="panel-body center">
+            <div class="counter" id="counter"><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b></div>
+            <p class="small gray" style="margin:6px 0 0">sejak 01-01-2000</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">INFORMASI</div>
+          <div class="panel-body small">
+            <p style="margin:0 0 4px"><b>Publikasi:</b> <span id="pub-count">&mdash;</span></p>
+            <p style="margin:0"><b>Diperbarui:</b> <span id="lastmod">&mdash;</span></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="content">
+
+        <a id="profil"></a>
+        <h2>Profil</h2>
+        <p id="bio">Memuat...</p>
+
+        <hr>
+
+        <a id="kajian"></a>
+        <h2>Bidang Kajian</h2>
+        <ul class="ball blue">
+          <li>Humaniora Digital</li>
+          <li>Kajian Budaya</li>
+          <li>Puisi Kontemporer</li>
+        </ul>
+
+        <hr>
+
+        <a id="publikasi"></a>
+        <h2>Publikasi</h2>
+        <div id="pub"><p class="gray">Memuat...</p></div>
+
+        <hr>
+
+        <a id="kontak"></a>
+        <h2>Kontak</h2>
+        <div class="emailbox">
+          <b>Surel:</b> <span id="email">memuat...</span>
+        </div>
+
+        <hr class="rainbow">
+
+        <div class="footer-strip">
+          <p class="small">
+            <a href="#top">[ Atas ]</a>
+            <a href="#publikasi">[ Publikasi ]</a>
+            <a href="edit.html">[ Admin ]</a>
+          </p>
+          <p class="small gray">
+            &copy; 2000&ndash;<span id="year">2026</span> Ananda Bintang Purwaramdhona
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="statusbar">
+    <div class="lock"></div>
+    <div class="msg" id="status">Selesai</div>
+    <div class="prog"><i></i></div>
+    <div class="grip"></div>
+  </div>
+
+</div>
 
 <script src="assets/js/main.js"></script>
 </body>
