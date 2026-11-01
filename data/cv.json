@@ -357,41 +357,6 @@
   ],
   "links": [
     {
-      "group": "Proyek Web",
-      "label": "Sastra Indonesia Unpad",
-      "url": "https://anandabintangp.github.io/sasindounpad",
-      "note": "Situs program studi",
-      "lock": false
-    },
-    {
-      "group": "Proyek Web",
-      "label": "Sastra Indonesia Unpad — Dosen",
-      "url": "https://anandabintangp.github.io/sasindounpad/dosen",
-      "note": "Direktori dosen",
-      "lock": false
-    },
-    {
-      "group": "Proyek Web",
-      "label": "ITB TTKI",
-      "url": "https://anandabintangp.github.io/ITBTTKI/",
-      "note": "Tata Tulis Karya Ilmiah ITB",
-      "lock": false
-    },
-    {
-      "group": "Proyek Web",
-      "label": "ITB TTKI — Dosen",
-      "url": "https://anandabintangp.github.io/ITBTTKI/dosen",
-      "note": "Direktori dosen",
-      "lock": false
-    },
-    {
-      "group": "Proyek Web",
-      "label": "Portal Operator Pusat Bahasa FIB Unpad",
-      "url": "https://pusatbahasa.fib.unpad.ac.id/portal-operator/",
-      "note": "Butuh kata sandi",
-      "lock": true
-    },
-    {
       "group": "Humaniora Digital",
       "label": "Melihat 5.068 Sampul Buku",
       "url": "https://anandabintangp.github.io/melihat-5.068-sampul-buku/",
