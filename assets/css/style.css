@@ -241,20 +241,20 @@ hr {
   letter-spacing: 1.5px;
   line-height: 1.15;
   margin: 0 0 4px;
-  background: linear-gradient(180deg, #7fb2ff 0%, #2f6be0 48%, #0a2f7a 100%);
+  background: linear-gradient(180deg, #fffbd0 0%, #ffd800 45%, #e8630c 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   z-index: 0;
 }
+/* Lapisan ini hanya garis tepi dan bayangan; isinya dibiarkan transparan agar gradien terlihat */
 .wordart::before {
   content: attr(data-text);
   position: absolute;
   left: 0; top: 0;
   z-index: -1;
-  color: #001a4d;
+  color: transparent;
   -webkit-text-stroke: 3px #001a4d;
-  text-shadow: 2px 2px 0 var(--sh);
 }
 h1.wordart { font-size: 46px; }
 h2.wordart { font-size: 26px; }
@@ -262,7 +262,7 @@ h2.wordart::before { -webkit-text-stroke-width: 2.5px; text-shadow: 1px 1px 0 va
 
 /* Peramban lama tanpa background-clip:text: pakai warna polos agar judul tidak hilang */
 @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
-  .wordart { color: #0a2f7a; background: none; }
+  .wordart { color: #e8630c; background: none; }
   .wordart::before { display: none; }
 }
 .title-wrap { text-align: center; padding: 6px 0 2px; }
