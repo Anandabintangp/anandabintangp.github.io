@@ -55,7 +55,10 @@
   function errText(res, body) {
     var m = (body && body.message) || ('Kesalahan ' + res.status);
     if (res.status === 401) { return 'Token tidak valid atau sudah kedaluwarsa.'; }
-    if (res.status === 403) { return 'Token tidak punya izin untuk repositori ini (' + m + ').'; }
+    if (res.status === 403) {
+      return 'Token belum punya izin menulis ke repositori ini. Buat token baru di GitHub dengan repositori ' +
+        'anandabintangp.github.io dan izin Contents: Read and write, lalu masuk ulang. (' + m + ')';
+    }
     if (res.status === 404) { return 'Repositori tidak ditemukan, atau token belum diberi akses ke repositori ini.'; }
     if (res.status === 422) { return 'Isi repositori berubah di tempat lain. Muat ulang halaman, lalu ulangi.'; }
     return m;
