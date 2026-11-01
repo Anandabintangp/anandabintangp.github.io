@@ -232,17 +232,16 @@ hr {
 
 /* ---------- 8. WORDART ---------- */
 
+/* Isi huruf biru terang ke tua, garis tepi tipis: huruf tetap terbaca di kertas terang */
 .wordart {
   position: relative;
   display: inline-block;
   font-family: var(--font-art);
   font-weight: normal;
-  letter-spacing: 1px;
-  line-height: 1.08;
-  margin: 0;
-  transform: scaleY(1.12);
-  transform-origin: center top;
-  background: linear-gradient(180deg, #ffffff 0%, #cfe0ff 38%, #4f86e8 56%, #0a2f7a 100%);
+  letter-spacing: 1.5px;
+  line-height: 1.15;
+  margin: 0 0 4px;
+  background: linear-gradient(180deg, #7fb2ff 0%, #2f6be0 48%, #0a2f7a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -254,12 +253,18 @@ hr {
   left: 0; top: 0;
   z-index: -1;
   color: #001a4d;
-  -webkit-text-stroke: 6px #001a4d;
-  text-shadow: 3px 3px 0 var(--sh), 5px 5px 0 rgba(0,0,0,.45);
+  -webkit-text-stroke: 3px #001a4d;
+  text-shadow: 2px 2px 0 var(--sh);
 }
 h1.wordart { font-size: 46px; }
 h2.wordart { font-size: 26px; }
-h2.wordart::before { -webkit-text-stroke-width: 4px; text-shadow: 2px 2px 0 var(--sh); }
+h2.wordart::before { -webkit-text-stroke-width: 2.5px; text-shadow: 1px 1px 0 var(--sh); }
+
+/* Peramban lama tanpa background-clip:text: pakai warna polos agar judul tidak hilang */
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .wordart { color: #0a2f7a; background: none; }
+  .wordart::before { display: none; }
+}
 .title-wrap { text-align: center; padding: 6px 0 2px; }
 
 h3 {
@@ -356,7 +361,10 @@ table.data td { padding: 8px; border: 1px solid #d4d4d4; vertical-align: top; li
 table.data tr:nth-child(even) td { background: #eef1f7; }
 table.data tr:hover td { background: #fffbcc; }
 table.data .num { width: 38px; text-align: center; color: #666; font-family: var(--font-mono); }
-table.data .yr  { width: 132px; text-align: center; font-family: var(--font-mono); font-weight: bold; color: var(--maroon); white-space: nowrap; }
+table.data .yr  { width: 1%; min-width: 72px; text-align: center; font-family: var(--font-mono); font-weight: bold; color: var(--maroon); white-space: nowrap; }
+table.data .per { white-space: normal; min-width: 124px; }
+/* Judul kolom tetap putih di atas latar biru (sebelumnya ikut merah dan sulit dibaca) */
+table.data th.yr { color: var(--hi); font-family: var(--font-ui); font-size: 11px; }
 table.data .muted { color: #444; font-size: 13px; }
 table.data em { color: #333; }
 
@@ -629,19 +637,29 @@ button.small { min-width: 0; padding: 2px 8px; font-size: 11px; }
 
 .row-grid { display: grid; gap: 6px; margin-bottom: 6px; align-items: start; }
 .row-grid input { width: 100%; }
-.row-grid .del { min-width: 0; width: 34px; padding: 4px 0; color: #a00000; font-weight: bold; }
+.row-act { display: flex; gap: 3px; }
+.ico-btn { min-width: 0; flex: 1; padding: 4px 0; font-size: 11px; line-height: 1.2; }
+.ico-btn.del { color: #a00000; font-weight: bold; }
 .rowhead {
   font-family: var(--font-ui); font-size: 11px; font-weight: bold;
   display: grid; gap: 6px; margin-bottom: 4px;
 }
 
-.mono-out {
-  width: 100%; height: 170px;
-  font-family: var(--font-mono); font-size: 12px;
-  background: var(--dk); color: #33ff33;
-  border: 2px solid; border-color: var(--sh) var(--hi) var(--hi) var(--sh);
-  padding: 6px;
+label.chk { display: flex; align-items: center; gap: 6px; margin: 10px 0 0; font-family: var(--font-ui); font-size: 12px; cursor: pointer; }
+label.chk input { width: auto; box-shadow: none; margin: 0; }
+
+/* Bilah simpan menempel di dasar layar saat menggulir daftar yang panjang */
+.savebar {
+  position: sticky; bottom: 42px; z-index: 40;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  background: var(--face);
+  border: 2px solid; border-color: var(--hi) var(--sh) var(--sh) var(--hi);
+  box-shadow: 0 -2px 0 rgba(0,0,0,.12);
+  padding: 7px 10px; margin: 14px 0;
 }
+.savebar .msg { flex: 1; min-width: 160px; font-family: var(--font-ui); font-size: 12px; color: #333; }
+.savebar .msg.dirty { color: var(--maroon); font-weight: bold; }
+.savebar button[disabled] { opacity: .6; cursor: default; }
 
 #gate { max-width: 430px; margin: 40px auto; }
 #adminapp { display: none; }
@@ -666,6 +684,15 @@ button.small { min-width: 0; padding: 2px 8px; font-size: 11px; }
   dl.spec dt { flex: none; }
   .taskbar .tasks { display: none; }
   #clippy { right: 8px; left: 8px; }
+  .viewport { padding: 12px 10px 16px; }
+  table.data { font-size: 13px; }
+  table.data td { padding: 6px; }
+  table.data .yr { min-width: 52px; }
+  table.data .num { width: 26px; }
+  .row-grid { grid-template-columns: 1fr !important; padding: 8px; background: #fff; border: 1px solid #c8c8c8; }
+  .ico-btn { padding: 8px 0; }
+  .rowhead { display: none; }
+  #gate { margin: 16px auto; }
 }
 
 @media print {

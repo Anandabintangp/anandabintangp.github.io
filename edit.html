@@ -20,9 +20,9 @@
     <div class="tb-icon"></div>
     <div class="tb-text">ABP Academic &mdash; [Panel Admin]</div>
     <div class="tb-buttons">
-      <button class="tb-btn" type="button" data-act="mini">_</button>
-      <button class="tb-btn" type="button" data-act="maxi">&#9633;</button>
-      <button class="tb-btn" type="button" data-act="close">&times;</button>
+      <button class="tb-btn" type="button" data-act="mini" title="Perkecil teks">_</button>
+      <button class="tb-btn" type="button" data-act="maxi" title="Perbesar teks">&#9633;</button>
+      <button class="tb-btn" type="button" data-act="close" title="Kembali ke situs">&times;</button>
     </div>
   </div>
 
@@ -30,11 +30,11 @@
     <div class="menu">
       <button type="button"><u>B</u>erkas</button>
       <ul>
-        <li><button type="button" data-act="gen">Buat semua JSON</button></li>
-        <li><button type="button" data-act="dl-all">Unduh ketiga berkas</button></li>
+        <li><button type="button" data-act="save">Simpan ke situs</button></li>
+        <li><button type="button" data-act="backup">Unduh cadangan (JSON)</button></li>
         <li class="sep"></li>
-        <li><button type="button" data-act="print">Cetak</button></li>
         <li><a href="index.html">Kembali ke situs</a></li>
+        <li><button type="button" data-act="logout">Keluar</button></li>
       </ul>
     </div>
     <div class="menu">
@@ -51,44 +51,48 @@
     </div>
     <div class="menu">
       <button type="button">Ban<u>t</u>uan</button>
-      <ul><li><button type="button" data-act="about">Cara menyimpan</button></li></ul>
+      <ul><li><button type="button" data-act="about">Cara masuk &amp; menyimpan</button></li></ul>
     </div>
   </nav>
 
   <div class="toolbar">
-    <button class="tool" type="button" data-act="back"><i class="i-back"></i><span>Kembali</span></button>
-    <button class="tool" type="button" data-act="forward"><i class="i-fwd"></i><span>Maju</span></button>
     <button class="tool" type="button" data-act="home"><i class="i-home"></i><span>Situs</span></button>
     <button class="tool" type="button" data-act="reload"><i class="i-reload"></i><span>Muat Ulang</span></button>
-    <button class="tool" type="button" data-act="gen"><i class="i-cv"></i><span>Buat JSON</span></button>
-    <button class="tool" type="button" data-act="print"><i class="i-print"></i><span>Cetak</span></button>
+    <button class="tool" type="button" data-act="save"><i class="i-cv"></i><span>Simpan</span></button>
+    <button class="tool" type="button" data-act="backup"><i class="i-print"></i><span>Cadangan</span></button>
+    <button class="tool" type="button" data-act="logout"><i class="i-lock"></i><span>Keluar</span></button>
     <button class="tool" type="button" data-act="about"><i class="i-find"></i><span>Bantuan</span></button>
   </div>
 
   <div class="locbar">
     <label>Alamat:</label>
-    <div class="url">http://anandabintangp.github.io/edit.html</div>
+    <div class="url" id="urlbar">https://anandabintangp.github.io/edit.html</div>
     <div class="brandmark"></div>
   </div>
 
   <main class="viewport">
 
-    <!-- ===== GERBANG KATA SANDI ===== -->
+    <!-- ===== MASUK ===== -->
     <div id="gate">
       <div class="panel">
         <div class="panel-title">MASUK PANEL ADMIN</div>
         <div class="panel-body">
           <div style="display:flex;gap:14px;align-items:flex-start">
-            <div class="dico dico-key" style="flex:0 0 34px;height:34px"></div>
+            <div class="dico dico-key" style="flex:0 0 34px;height:34px;background-repeat:no-repeat;background-size:34px"></div>
             <div style="flex:1;min-width:0">
-              <p style="margin-top:0">Halaman ini hanya untuk pemilik situs. Masukkan kata sandi.</p>
-              <label class="fld" for="gate-pw">Kata sandi</label>
-              <input type="password" id="gate-pw" autocomplete="current-password">
+              <p style="margin-top:0">Khusus pemilik situs. Masuk memakai token akun GitHub; tanpa token yang sah, tidak ada yang bisa mengubah isi situs.</p>
+              <label class="fld" for="gate-token">Token GitHub</label>
+              <input type="password" id="gate-token" autocomplete="off" spellcheck="false" placeholder="github_pat_&hellip;">
+              <label class="chk"><input type="checkbox" id="gate-remember" checked> Ingat di peramban ini</label>
               <p class="err" id="gate-err"></p>
               <div class="btnrow">
                 <button type="button" data-act="gate-ok">Masuk</button>
                 <a class="btn" href="index.html">Batal</a>
               </div>
+              <p class="small gray" style="margin:12px 0 0">
+                Belum punya token? <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Buat di GitHub</a>
+                (repositori <code>anandabintangp.github.io</code>, izin <b>Contents: Read and write</b>).
+              </p>
             </div>
           </div>
         </div>
@@ -105,29 +109,24 @@
       <div class="notebox">
         <div class="ico"></div>
         <div>
-          Sunting isi di bawah, tekan <b>Buat semua JSON</b>, lalu salin atau unduh hasilnya dan timpa berkas
-          di folder <code>data/</code> pada repositori, kemudian commit. GitHub Pages bersifat statis sehingga
-          panel ini tidak bisa menyimpan langsung ke server.
+          <span id="who">Masuk.</span>
+          Sunting isi di bawah, lalu tekan <b>Simpan ke situs</b>. Perubahan langsung tersimpan di repositori
+          dan tampil di situs sekitar satu menit kemudian.
+          <button type="button" class="small" data-act="logout" style="margin-left:6px">Keluar</button>
         </div>
       </div>
 
       <a id="profil"></a>
       <fieldset>
-        <legend>Profil &mdash; data/profile.json</legend>
+        <legend>Profil</legend>
         <label class="fld" for="f-name">Nama</label>
         <input type="text" id="f-name">
-        <label class="fld" for="f-title">Titel</label>
+        <label class="fld" for="f-title">Titel (pisahkan dengan |)</label>
         <input type="text" id="f-title">
         <label class="fld" for="f-bio">Bio</label>
         <textarea id="f-bio" rows="3"></textarea>
-        <label class="fld" for="f-gender">Jenis kelamin</label>
-        <input type="text" id="f-gender">
-        <label class="fld" for="f-birth">Tempat, tanggal lahir</label>
-        <input type="text" id="f-birth">
         <label class="fld" for="f-email">Surel</label>
         <input type="text" id="f-email">
-        <label class="fld" for="f-phone">Telepon</label>
-        <input type="text" id="f-phone">
         <label class="fld" for="f-interests">Minat riset (pisahkan dengan koma)</label>
         <input type="text" id="f-interests">
         <label class="fld" for="f-scholar">Google Scholar</label>
@@ -138,32 +137,11 @@
 
       <div id="sections"></div>
 
-      <a id="hasil"></a>
-      <fieldset>
-        <legend>Hasil JSON</legend>
-        <div class="btnrow" style="margin-top:0">
-          <button type="button" data-act="gen">Buat semua JSON</button>
-          <button type="button" data-act="dl-all">Unduh ketiga berkas</button>
-        </div>
-
-        <label class="fld">data/profile.json
-          <button type="button" class="small" data-copy="out-profile">Salin</button>
-          <button type="button" class="small" data-dl="out-profile|profile.json">Unduh</button>
-        </label>
-        <textarea class="mono-out" id="out-profile" spellcheck="false" readonly></textarea>
-
-        <label class="fld">data/publications.json
-          <button type="button" class="small" data-copy="out-pubs">Salin</button>
-          <button type="button" class="small" data-dl="out-pubs|publications.json">Unduh</button>
-        </label>
-        <textarea class="mono-out" id="out-pubs" spellcheck="false" readonly></textarea>
-
-        <label class="fld">data/cv.json
-          <button type="button" class="small" data-copy="out-cv">Salin</button>
-          <button type="button" class="small" data-dl="out-cv|cv.json">Unduh</button>
-        </label>
-        <textarea class="mono-out" id="out-cv" spellcheck="false" readonly></textarea>
-      </fieldset>
+      <div class="savebar" id="savebar">
+        <span class="msg" id="save-msg">Belum ada perubahan.</span>
+        <button type="button" data-act="backup" class="small">Unduh cadangan</button>
+        <button type="button" data-act="save" id="btn-save"><b>Simpan ke situs</b></button>
+      </div>
 
       <div class="center">
         <p class="small gray">&copy; 2000&ndash;<span id="year">2026</span> Ananda Bintang Purwaramdhona</p>
@@ -174,8 +152,8 @@
 
   <div class="statusbar">
     <div class="lock"></div>
-    <div class="msg" id="status">Menunggu kata sandi…</div>
-    <div class="zone">Zona Lokal</div>
+    <div class="msg" id="status">Menunggu masuk&hellip;</div>
+    <div class="zone">Panel Admin</div>
     <div class="grip"></div>
   </div>
 

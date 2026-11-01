@@ -24,7 +24,7 @@
 
   function getJSON(url, fallback) {
     if (typeof fetch !== 'function') { return Promise.resolve(fallback); }
-    return fetch(url)
+    return fetch(url, { cache: 'no-cache' })
       .then(function (r) { if (!r.ok) { throw new Error(r.status); } return r.json(); })
       .catch(function () { return fallback; });
   }
@@ -35,33 +35,6 @@
     if (!q) { return t; }
     var needle = esc(q).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     return t.replace(new RegExp('(' + needle + ')', 'gi'), '<mark>$1</mark>');
-  }
-
-  /* ---------------- Kunci ---------------- */
-
-  var PW_SHA = '0714665e2b862ebc0c7d9927a8ecdf49bf126dfc145b2915b2568cb826b0d4c4';
-  var PW_DJB = 445639743;
-
-  function djb2(s) {
-    var h = 5381;
-    for (var i = 0; i < s.length; i++) { h = ((h * 33) ^ s.charCodeAt(i)) >>> 0; }
-    return h;
-  }
-  function sha256hex(s) {
-    if (!(window.crypto && crypto.subtle && crypto.subtle.digest)) { return Promise.resolve(null); }
-    return crypto.subtle.digest('SHA-256', new TextEncoder().encode(s))
-      .then(function (buf) {
-        return Array.prototype.map.call(new Uint8Array(buf), function (b) {
-          return ('0' + b.toString(16)).slice(-2);
-        }).join('');
-      })
-      .catch(function () { return null; });
-  }
-  function checkPassword(pw) {
-    return sha256hex(pw).then(function (hex) {
-      if (hex) { return hex === PW_SHA; }
-      return djb2(pw) === PW_DJB;
-    });
   }
 
   /* ---------------- Data ---------------- */
@@ -183,7 +156,12 @@
     var idn = $('identity');
     if (idn) {
       idn.innerHTML = '';
-      [['Nama', p.name], ['Jenis kelamin', p.gender], ['Tempat, tanggal lahir', p.birth],
+      var current = [];
+      (DATA.cv.work || []).forEach(function (w) {
+        if (/sekarang/i.test(w.year || '') && current.indexOf(w.org) < 0) { current.push(w.org); }
+      });
+      [['Nama', p.name], ['Profesi', String(p.title || '').replace(/\s*\|\s*/g, ' · ')],
+       ['Afiliasi', current.join(', ')],
        ['Minat riset', (p.interests || []).join(', ')]].forEach(function (row) {
         if (!row[1]) { return; }
         var d = el('div');
@@ -225,15 +203,8 @@
       '<span>' + esc(l.note || '') + '</span>' +
       '<code>' + esc(l.url.replace(/^https?:\/\//, '').slice(0, 58)) + '</code></span>';
     b.addEventListener('click', function () {
-      if (l.lock) {
-        askPassword('Tautan "' + l.label + '" dilindungi kata sandi.', function () {
-          window.open(l.url, '_blank', 'noopener');
-          status('Membuka ' + l.label);
-        });
-      } else {
-        window.open(l.url, '_blank', 'noopener');
-        status('Membuka ' + l.label);
-      }
+      window.open(l.url, '_blank', 'noopener');
+      status('Membuka ' + l.label);
     });
     b.addEventListener('mouseenter', function () { status(l.url); });
     b.addEventListener('mouseleave', function () { status('Selesai'); });
@@ -272,7 +243,6 @@
     box.innerHTML = '';
     var rows = [
       ['Surel', p.email ? '<a href="mailto:' + esc(p.email) + '">' + esc(p.email) + '</a>' : ''],
-      ['Telepon', p.phone ? '<a href="tel:' + esc(p.phone.replace(/\s/g, '')) + '">' + esc(p.phone) + '</a>' : ''],
       ['Google Scholar', p.scholar ? '<a href="' + esc(p.scholar) + '" target="_blank" rel="noopener">Profil Scholar</a>' : ''],
       ['Linktree', p.linktree ? '<a href="' + esc(p.linktree) + '" target="_blank" rel="noopener">' + esc(p.linktree.replace(/^https?:\/\//, '')) + '</a>' : '']
     ];
@@ -326,7 +296,7 @@
     counts.pekerjaan = buildTable('t-pekerjaan', [
       { key: 'org', label: 'Organisasi' },
       { key: 'role', label: 'Posisi' },
-      { key: 'year', label: 'Periode', cls: 'yr' }
+      { key: 'year', label: 'Periode', cls: 'yr per' }
     ], DATA.cv.work || []);
 
     counts.publikasi = buildTable('t-publikasi', [
@@ -424,7 +394,7 @@
     });
 
     var label = (TABS.filter(function (t) { return t.id === id; })[0] || {}).label || '';
-    $('urlbar').textContent = 'http://anandabintangp.github.io/index.html#' + id;
+    $('urlbar').textContent = location.origin + location.pathname + '#' + id;
     $('taskitem').textContent = 'ABP Academic — ' + label;
     document.title = (DATA.profile.name || 'ABP Academic') + ' — ' + label;
     var tb = document.querySelector('.tb-text');
@@ -480,11 +450,7 @@
       b.type = 'button';
       b.addEventListener('click', function () {
         closeMenus();
-        if (l.lock) {
-          askPassword('Tautan "' + l.label + '" dilindungi kata sandi.', function () {
-            window.open(l.url, '_blank', 'noopener');
-          });
-        } else { window.open(l.url, '_blank', 'noopener'); }
+        window.open(l.url, '_blank', 'noopener');
       });
       li.appendChild(b);
       ml.appendChild(li);
@@ -514,38 +480,8 @@
 
   /* ---------------- Dialog ---------------- */
 
-  var pwCallback = null;
-
-  function askPassword(msg, cb) {
-    pwCallback = cb;
-    $('pw-msg').textContent = msg;
-    $('pw').value = '';
-    $('pw-err').textContent = '';
-    $('pwdlg').classList.add('open');
-    setTimeout(function () { $('pw').focus(); }, 30);
-  }
-
-  function submitPassword() {
-    var v = $('pw').value;
-    $('pw-err').textContent = 'Memeriksa…';
-    checkPassword(v).then(function (ok) {
-      if (ok) {
-        $('pwdlg').classList.remove('open');
-        $('pw-err').textContent = '';
-        var cb = pwCallback; pwCallback = null;
-        if (cb) { cb(); }
-      } else {
-        $('pw-err').textContent = 'Kata sandi salah. Coba lagi.';
-        $('pw').value = '';
-        $('pw').focus();
-      }
-    });
-  }
-
   function closeDialogs() {
-    $('pwdlg').classList.remove('open');
     $('infodlg').classList.remove('open');
-    pwCallback = null;
   }
 
   function showInfo(title, html) {
@@ -554,11 +490,10 @@
     $('infodlg').classList.add('open');
   }
 
+  /* Login ada di halaman admin sendiri (akun GitHub), bukan di sini */
   function openAdmin() {
-    askPassword('Panel Admin dilindungi. Masukkan kata sandi untuk melanjutkan.', function () {
-      status('Membuka Panel Admin…');
-      location.href = 'edit.html#unlock=' + PW_SHA;
-    });
+    status('Membuka Panel Admin…');
+    location.href = 'edit.html';
   }
 
   /* ---------------- Asisten ---------------- */
@@ -569,15 +504,17 @@
     'Tombol <b>Cari</b> menyaring seluruh bagian sekaligus, bukan cuma tab yang sedang terbuka.',
     'Di tab <b>Tulisan Populer</b> ada penyaring media: klik Mojok, Pena Budaya, Tempo, dan seterusnya.',
     'Semua judul publikasi bisa diklik langsung menuju naskah atau profil Google Scholar.',
-    'Menu <b>Penanda</b> berisi seluruh tautan proyek. Yang bergambar gembok butuh kata sandi.',
+    'Menu <b>Penanda</b> berisi seluruh tautan proyek. Yang bergambar gembok meminta kata sandi di situs tujuannya.',
     'Tombol <b>Mulai</b> di pojok kiri bawah membuka daftar seluruh bagian situs.',
     'Menu <b>Berkas &rsaquo; Unduh CV</b> menyimpan berkas PDF versi lengkap.',
     'Menu <b>Tampilan &rsaquo; Buka semua bagian</b> menampilkan seluruh isi sekaligus — enak untuk dicetak.',
     'Tombol <b>?</b> di pojok kanan atas menampilkan keterangan situs ini.'
   ];
   var tipIndex = -1;
+  var greetTimer = null;
 
   function clippyTip(text) {
+    if (!text) { clearTimeout(greetTimer); }     /* pengunjung sendiri yang meminta tips: jangan sembunyikan otomatis */
     var box = $('clippy');
     box.classList.add('show');
     $('clippy-tab').classList.remove('show');
@@ -656,8 +593,6 @@
         'dan dapat disunting lewat Panel Admin.</p>' +
         '<p class="small gray">Tampilan bergaya antarmuka desktop era 2000.</p>');
     },
-    'pw-ok': submitPassword,
-    'pw-cancel': closeDialogs,
     'info-close': closeDialogs
   };
 
@@ -718,10 +653,6 @@
     if (state.query) { status('Mencari "' + state.query + '"…'); }
   });
 
-  $('pw').addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') { e.preventDefault(); submitPassword(); }
-  });
-
   $$('.overlay').forEach(function (o) {
     o.addEventListener('click', function (e) { if (e.target === o) { closeDialogs(); } });
   });
@@ -755,11 +686,16 @@
 
     $('brandmark').classList.remove('busy');
     status('Selesai');
+    /* Sapaan asisten hanya sekali per kunjungan agar tidak menutupi tabel setiap pindah halaman */
+    var greeted = false;
+    try { greeted = sessionStorage.getItem('abp-greeted') === '1'; } catch (e) {}
     setTimeout(function () {
-      if (window.innerWidth >= 780) {
+      if (window.innerWidth >= 780 && !greeted) {
         clippyTip('Halo! Saya asisten situs ini. Klik saya kapan saja untuk tips memakai halaman ini.');
+        greetTimer = setTimeout(clippyHide, 8000);
+        try { sessionStorage.setItem('abp-greeted', '1'); } catch (e) {}
       } else {
-        $('clippy-tab').classList.add('show');   /* layar kecil: cukup tombol kecil */
+        $('clippy-tab').classList.add('show');   /* tombol kecil saja */
       }
     }, 900);
   });
